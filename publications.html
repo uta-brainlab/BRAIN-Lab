@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAINAI@UTA - Publications</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">BRAINAI@UTA</a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Publications</h1>
+                <p>Research papers and scholarly articles from our lab</p>
+            </div>
+        </section>
+
+        <section class="publications-section">
+            <div class="container">
+                <div class="publications-filter">
+                    <div class="search-box">
+                        <input type="text" id="publication-search" placeholder="Search publications...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="year-filter">
+                            <option value="all">All Years</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="older">2019 & Older</option>
+                        </select>
+                        <select id="topic-filter">
+                            <option value="all">All Topics</option>
+                            <option value="computational-psychiatry">Computational Psychiatry</option>
+                            <option value="neuroimaging">Neuroimaging</option>
+                            <option value="machine-learning">Machine Learning</option>
+                            <option value="cognitive-neuroscience">Cognitive Neuroscience</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="publications-list">
+                    <div class="year-section">
+                        <h2>2023</h2>
+                        <div class="publication-items">
+                            <div class="publication-item" data-year="2023" data-topic="computational-psychiatry neuroimaging">
+                                <div class="publication-meta">
+                                    <span class="publication-date">August 2023</span>
+                                    <span class="publication-journal">Journal of Psychiatry Research</span>
+                                </div>
+                                <h3>Neural correlates of cognitive control in first episode psychosis: A functional connectivity study</h3>
+                                <p class="publication-authors">Smith J, Johnson R, <strong>Zhu X</strong>, Williams T, Davis A</p>
+                                <p class="publication-abstract">
+                                    This study investigates alterations in functional connectivity during cognitive control tasks in 
+                                    patients with first episode psychosis using advanced neuroimaging techniques. Results indicate 
+                                    significant differences in frontoparietal network connectivity associated with cognitive performance.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.psychres.2023.08.001</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                            
+                            <div class="publication-item" data-year="2023" data-topic="machine-learning cognitive-neuroscience">
+                                <div class="publication-meta">
+                                    <span class="publication-date">May 2023</span>
+                                    <span class="publication-journal">Frontiers in Computational Neuroscience</span>
+                                </div>
+                                <h3>Reinforcement learning models of decision-making in psychiatric disorders: A systematic review</h3>
+                                <p class="publication-authors">Chen Y, <strong>Zhu X</strong>, Rodriguez D, Thompson P</p>
+                                <p class="publication-abstract">
+                                    This review synthesizes current literature on reinforcement learning approaches to understanding 
+                                    altered decision-making processes in various psychiatric conditions, highlighting methodological 
+                                    advances and future research directions.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.3389/fncom.2023.123456</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="year-section">
+                        <h2>2022</h2>
+                        <div class="publication-items">
+                            <div class="publication-item" data-year="2022" data-topic="machine-learning neuroimaging">
+                                <div class="publication-meta">
+                                    <span class="publication-date">November 2022</span>
+                                    <span class="publication-journal">NeuroImage</span>
+                                </div>
+                                <h3>Deep variational autoencoders for neuroimaging data analysis</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Chen Y, Williams B, Johnson R, Davis T</p>
+                                <p class="publication-abstract">
+                                    This paper presents a novel deep variational autoencoder approach for dimensionality reduction and feature 
+                                    extraction from complex neuroimaging datasets, demonstrating improved performance in capturing meaningful 
+                                    patterns associated with psychiatric symptoms.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.neuroimage.2022.11.003</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                            
+                            <div class="publication-item" data-year="2022" data-topic="computational-psychiatry">
+                                <div class="publication-meta">
+                                    <span class="publication-date">July 2022</span>
+                                    <span class="publication-journal">JAMA Psychiatry</span>
+                                </div>
+                                <h3>Computational markers of cognitive dysfunction in schizophrenia: Evidence from a large multi-site study</h3>
+                                <p class="publication-authors">Johnson R, Davis A, <strong>Zhu X</strong>, Miller J, Wilson T, NAPLS Consortium</p>
+                                <p class="publication-abstract">
+                                    This multi-site study identifies computational markers derived from cognitive task performance that 
+                                    predict functional outcomes in schizophrenia, with potential implications for personalized 
+                                    treatment approaches targeting specific cognitive domains.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1001/jamapsychiatry.2022.1234</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="year-section">
+                        <h2>2021</h2>
+                        <div class="publication-items">
+                            <div class="publication-item" data-year="2021" data-topic="computational-psychiatry cognitive-neuroscience">
+                                <div class="publication-meta">
+                                    <span class="publication-date">December 2021</span>
+                                    <span class="publication-journal">Annual Review of Neuroscience</span>
+                                </div>
+                                <h3>Computational approaches to understanding psychiatric disorders</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Miller J, Davis T, Wilson R, Thompson P</p>
+                                <p class="publication-abstract">
+                                    This review paper provides a comprehensive overview of computational methods being applied to 
+                                    understand the neural and cognitive mechanisms underlying psychiatric disorders, discussing 
+                                    both challenges and promising future directions for the field.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1146/annurev-neuro-093019-110048</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                            
+                            <div class="publication-item" data-year="2021" data-topic="neuroimaging machine-learning">
+                                <div class="publication-meta">
+                                    <span class="publication-date">June 2021</span>
+                                    <span class="publication-journal">Nature Communications</span>
+                                </div>
+                                <h3>Identifying transdiagnostic dimensions of brain dysfunction using multimodal neuroimaging and machine learning</h3>
+                                <p class="publication-authors">Miller J, <strong>Zhu X</strong>, Smith J, Chen Y, International Consortium for Brain Mapping</p>
+                                <p class="publication-abstract">
+                                    This study employs advanced machine learning techniques to analyze multimodal neuroimaging data 
+                                    across diagnostic categories, identifying transdiagnostic dimensions of brain dysfunction that 
+                                    may provide more biologically meaningful targets for intervention.
+                                </p>
+                                <div class="publication-links">
+                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1038/s41467-021-23456-7</a>
+                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BRAINAI@UTA</h3>
+                    <p>Brain and Artificial Intelligence Research Lab<br>University of Texas at Arlington</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Email: xi.zhu@uta.edu<br>Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BRAINAI Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Publications search and filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('publication-search');
+            const yearFilter = document.getElementById('year-filter');
+            const topicFilter = document.getElementById('topic-filter');
+            const publicationItems = document.querySelectorAll('.publication-item');
+            const yearSections = document.querySelectorAll('.year-section');
+            
+            // Function to filter publications
+            function filterPublications() {
+                const searchText = searchInput.value.toLowerCase();
+                const yearValue = yearFilter.value;
+                const topicValue = topicFilter.value;
+                
+                publicationItems.forEach(item => {
+                    const title = item.querySelector('h3').textContent.toLowerCase();
+                    const authors = item.querySelector('.publication-authors').textContent.toLowerCase();
+                    const abstract = item.querySelector('.publication-abstract').textContent.toLowerCase();
+                    const year = item.getAttribute('data-year');
+                    const topics = item.getAttribute('data-topic').split(' ');
+                    
+                    const matchesSearch = title.includes(searchText) || 
+                                         authors.includes(searchText) || 
+                                         abstract.includes(searchText);
+                    
+                    const matchesYear = yearValue === 'all' || 
+                                       (yearValue === 'older' && parseInt(year) < 2020) || 
+                                       year === yearValue;
+                    
+                    const matchesTopic = topicValue === 'all' || 
+                                        topics.includes(topicValue);
+                    
+                    if (matchesSearch && matchesYear && matchesTopic) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Hide year sections with no visible publications
+                yearSections.forEach(section => {
+                    const visibleItems = section.querySelectorAll('.publication-item[style=""]').length;
+                    if (visibleItems === 0) {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = '';
+                    }
+                });
+            }
+            
+            // Add event listeners
+            searchInput.addEventListener('input', filterPublications);
+            yearFilter.addEventListener('change', filterPublications);
+            topicFilter.addEventListener('change', filterPublications);
+        });
+    </script>
+</body>
+</html> 

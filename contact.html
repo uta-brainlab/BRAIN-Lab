@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAINAI@UTA - Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">BRAINAI@UTA</a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with the BRAINAI@UTA team</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Lab Information</h2>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-content">
+                                <h3>Location</h3>
+                                <p>
+                                    Brain and AI Research Lab<br>
+                                    Department of Psychology<br>
+                                    University of Texas at Arlington<br>
+                                    Arlington, TX 76019
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>
+                                    <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a> (PI)<br>
+                                    <a href="mailto:brainai-lab@uta.edu">brainai-lab@uta.edu</a> (Lab)
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="info-content">
+                                <h3>Phone</h3>
+                                <p>(123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="info-content">
+                                <h3>Office Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h3>Follow Us</h3>
+                            <div class="social-icons large">
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send a Message</h2>
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="collaboration">Research Collaboration</option>
+                                    <option value="student">Prospective Student</option>
+                                    <option value="media">Media Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                        <p class="form-note">
+                            * This form uses a third-party service (Formspree) to process submissions. 
+                            Replace the form action URL with your own Formspree form ID before deploying.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-us-section light-bg">
+            <div class="container">
+                <h2>Join Our Team</h2>
+                <p>
+                    We're always looking for talented and motivated individuals to join our research team.
+                    Below are current opportunities and information for prospective lab members.
+                </p>
+                
+                <div class="opportunities-grid">
+                    <div class="opportunity-card">
+                        <h3>Graduate Students</h3>
+                        <p>
+                            We welcome applications from prospective PhD and Master's students interested in computational 
+                            psychiatry, neuroimaging, and machine learning applications in mental health research.
+                        </p>
+                        <h4>Qualifications:</h4>
+                        <ul>
+                            <li>Strong background in psychology, neuroscience, computer science, or a related field</li>
+                            <li>Programming experience (Python, R, MATLAB, etc.)</li>
+                            <li>Interest in interdisciplinary research at the intersection of brain science and AI</li>
+                        </ul>
+                        <p>
+                            Interested applicants should first apply to the relevant graduate program at UTA and indicate 
+                            Dr. Xi Zhu as a potential advisor. You may also email Dr. Zhu directly with your CV, research 
+                            statement, and transcripts.
+                        </p>
+                    </div>
+                    
+                    <div class="opportunity-card">
+                        <h3>Postdoctoral Fellows</h3>
+                        <p>
+                            We occasionally have openings for postdoctoral researchers with expertise in computational 
+                            neuroscience, machine learning for healthcare, or psychiatric neuroimaging.
+                        </p>
+                        <h4>Current Opportunities:</h4>
+                        <ul>
+                            <li>
+                                <strong>Computational Psychiatry Postdoc</strong>: 
+                                Position focused on developing machine learning approaches for predicting treatment response 
+                                in mood disorders using multimodal data.
+                            </li>
+                        </ul>
+                        <p>
+                            To apply, please send your CV, research statement, and contact information for three references 
+                            to <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a> with the subject line "Postdoc Application".
+                        </p>
+                    </div>
+                    
+                    <div class="opportunity-card">
+                        <h3>Undergraduate Research Assistants</h3>
+                        <p>
+                            Undergraduate students at UTA interested in gaining research experience are encouraged to apply 
+                            for research assistant positions in our lab.
+                        </p>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Minimum GPA of 3.0</li>
+                            <li>Commitment of at least 8-10 hours per week</li>
+                            <li>Interest in research in neuroscience, psychology, or computer science</li>
+                        </ul>
+                        <p>
+                            Please fill out our <a href="#">undergraduate research application form</a> if you're interested
+                            in joining the lab.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit-us">
+            <div class="container">
+                <h2>Visit Us</h2>
+                <div class="map-container">
+                    <!-- Placeholder for map - to be replaced with actual Google Maps embed code -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Interactive map will be displayed here</p>
+                        <p class="map-note">Replace this with a Google Maps embed code showing the lab's location at UTA</p>
+                    </div>
+                    <div class="directions">
+                        <h3>Getting Here</h3>
+                        <p>
+                            Our lab is located in the Psychology Building at the University of Texas at Arlington campus.
+                            The building is accessible from Cooper Street with visitor parking available nearby.
+                        </p>
+                        <h4>Public Transportation</h4>
+                        <p>
+                            UTA is served by Arlington's Via Rideshare and several bus routes. 
+                            The Trinity Railway Express (TRE) CentrePort/DFW Airport Station provides 
+                            connections to the greater Dallas-Fort Worth area.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BRAINAI@UTA</h3>
+                    <p>Brain and Artificial Intelligence Research Lab<br>University of Texas at Arlington</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Email: xi.zhu@uta.edu<br>Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BRAINAI Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

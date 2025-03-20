@@ -1,0 +1,48 @@
+# GitHub Pages configuration file for BRAINAI@UTA website
+
+# Basic site information
+title: BRAINAI@UTA
+description: Brain and Artificial Intelligence Research Laboratory at the University of Texas at Arlington
+url: "" # Replace with your GitHub Pages URL when deployed
+
+# GitHub Pages settings
+markdown: kramdown
+permalink: pretty
+
+# Custom variables
+author:
+  name: Xi Zhu
+  email: xi.zhu@uta.edu
+
+# Social media links
+social:
+  twitter: ""
+  linkedin: ""
+  github: ""
+  
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .github
+  - LICENSE
+  - README.md
+  
+# Include specific files that might be excluded by default
+include:
+  - .nojekyll 
