@@ -1,4 +1,4 @@
-// BRAINAI@UTA Website JavaScript
+// BRAIN Lab @ UTA Website JavaScript
 
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
