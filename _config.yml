@@ -1,8 +1,9 @@
-# GitHub Pages configuration file for BRAINAI@UTA website
+# GitHub Pages configuration file for BRAIN Lab website
 
 # Basic site information
-title: BRAINAI@UTA
-description: Brain and Artificial Intelligence Research Laboratory at the University of Texas at Arlington
+theme: jekyll-theme-minimal
+title: BRAIN Lab @ UTA
+description: Biomedical Research in AI and Neuroimaging Laboratory at UTA
 url: "" # Replace with your GitHub Pages URL when deployed
 
 # GitHub Pages settings
