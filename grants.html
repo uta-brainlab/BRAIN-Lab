@@ -4,37 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRAIN Lab @ UTA - Grants</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Basic Styles (Keep consistent with original, adding grant-specific ones) */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; } /* Add mobile menu JS if needed */
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+
+        /* Page Header */
         .page-header {
-            background-image: url('images/banner.png');
-            background-size: 100% auto;
+            background-image: url('images/banner.png'); /* Ensure this image exists */
+            background-size: cover; /* Changed for better responsiveness */
             background-position: center;
             background-repeat: no-repeat;
             padding: 4rem 0;
             text-align: center;
             color: white;
             position: relative;
+            background-color: #4682B4; /* Fallback color */
         }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
+        .page-header::before { /* Optional overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
-        }
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
+        .page-header .container { position: relative; z-index: 2; }
 
-        .page-header .container {
-            position: relative;
-            z-index: 2;
+        /* Grants Section */
+        .current-grants, .grant-resources { padding: 3rem 0; }
+        .current-grants h2, .grant-resources h2 { font-family: 'Roboto', sans-serif; font-size: 2rem; color: #0056b3; margin-bottom: 2rem; text-align: center; }
+        .grants-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .grant-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .grant-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
+        .grant-card h3 { font-family: 'Roboto', sans-serif; font-size: 1.25rem; margin-top: 0; margin-bottom: 1rem; color: #0056b3; line-height: 1.4; }
+        .grant-details { flex-grow: 1; } /* Allow details to fill space */
+        .grant-details p { margin: 0.5rem 0; line-height: 1.6; font-size: 0.95rem; }
+        .grant-details p strong { color: #333; }
+        .grant-role { font-style: italic; color: #555; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1rem;} /* Style for role info */
+
+
+        /* Grant Resources Section */
+        .grant-resources.light-bg { background-color: #f8f9fa; }
+        .resources-content { text-align: center; max-width: 700px; margin: 0 auto; }
+        .resources-content p { font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.7; }
+        .resource-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .resource-link { display: inline-block; padding: 0.8rem 1.5rem; background-color: #0056b3; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background-color 0.3s ease; }
+        .resource-link:hover { background-color: #004494; }
+
+        /* Footer */
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
         }
     </style>
 </head>
@@ -76,50 +124,56 @@
                 <h2>Current Grants</h2>
                 <div class="grants-grid">
                     <div class="grant-card">
-                        <h3>Neural Mechanisms of Treatment Response in PTSD</h3>
+                        <h3>CentileBrain: A Normative Modeling Framework for Brain Health and Disease</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R01 MH114141084</p>
                             <p>Investigating neural mechanisms underlying treatment response in PTSD patients to improve therapeutic outcomes.</p>
+                            <p class="grant-role"><strong>PI:</strong> Dr. Paul M. Thompson (USC) | <strong>Lab Role:</strong> Site-PI (Dr. Zhu)</p>
                         </div>
                     </div>
 
                     <div class="grant-card">
-                        <h3>Computational Approaches to Understanding Depression</h3>
+                        <h3>Using Novel Virtual Reality Tasks to Identify Neural Mechanisms of Discrimination Learning in PTSD</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R01 MH131532</p>
                             <p>Developing computational models to better understand depression mechanisms and treatment responses.</p>
+                            <p class="grant-role"><strong>PI:</strong> Dr. Benjamin Suarez-Jimenez (Univ. of Rochester) | <strong>Lab Role:</strong> Site-PI (Dr. Zhu)</p>
                         </div>
                     </div>
 
                     <div class="grant-card">
-                        <h3>Brain Network Dynamics in Psychiatric Disorders</h3>
+                        <h3>Understanding Heterogeneity Across PTSD, MDD and Anxiety By Leveraging Large-scale Multimodal Neuroimaging Datasets</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R01 MH133840</p>
                             <p>Studying brain network dynamics to understand the underlying mechanisms of various psychiatric disorders.</p>
+                            <p class="grant-role"><strong>PI:</strong> Dr. Xi Zhu | <strong>Lab Role:</strong> PI</p>
                         </div>
                     </div>
 
                     <div class="grant-card">
-                        <h3>Neuroimaging Biomarkers of Mental Health</h3>
+                        <h3>Global Imaging Genetics Approach in Obsessive-Compulsive Disorder (GIGA-OCD), on Diversity and Predictive Modeling</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R01 MH133903</p>
                             <p>Identifying and validating neuroimaging biomarkers for mental health conditions.</p>
+                            <p class="grant-role"><strong>PIs:</strong> Drs. Odile van den Heuvel (Univ. of Amsterdam), Helen Blair Simpson (Columbia Univ.), Paul M. Thompson (USC) | <strong>Lab Role:</strong> Site-PI (Dr. Zhu)</p>
                         </div>
                     </div>
 
                     <div class="grant-card">
-                        <h3>Novel Therapeutic Approaches in PTSD</h3>
+                        <h3>Targeting Dopamine-Mediated Social Reward Sensitivity to Remediate Social Disconnection</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R61/33 MH129380</p>
                             <p>Developing and testing innovative therapeutic approaches for PTSD treatment.</p>
+                            <p class="grant-role"><strong>PIs:</strong> Drs. Charles Taylor (UC San Diego), Franklin Schneier (Columbia Univ.) | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</p>
                         </div>
                     </div>
 
                     <div class="grant-card">
-                        <h3>Neural Correlates of Obesity and Metabolism</h3>
+                        <h3>Effects of Maternal Diabetes on Early Brain Development</h3>
                         <div class="grant-details">
                             <p><strong>Grant Number:</strong> NIH R01 DK137899</p>
                             <p>Investigating the neural mechanisms underlying obesity and metabolic disorders.</p>
+                            <p class="grant-role"><strong>PI:</strong> Dr. Shan Luo (USC) | <strong>Lab Role:</strong> Site-PI (Dr. Zhu)</p>
                         </div>
                     </div>
                 </div>
@@ -132,8 +186,8 @@
                 <div class="resources-content">
                     <p>For more information about our grants and funding opportunities, please contact the lab directly.</p>
                     <div class="resource-links">
-                        <a href="lab grants/Past Grants Summary.docx" class="resource-link">Past Grants Summary</a>
-                        <a href="lab grants/Pending Grants Summary.docx" class="resource-link">Pending Grants Summary</a>
+                        <a href="Past%20Grants%20Summary.docx" class="resource-link">Past Grants Summary</a>
+                        <a href="Pending%20Grants%20Summary.docx" class="resource-link">Pending Grants Summary</a>
                     </div>
                 </div>
             </div>
@@ -149,16 +203,13 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
-                    <p>Email: xi.zhu@uta.edu</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                    </ul>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
                 </div>
                 <div class="footer-col">
                     <h3>Follow Us</h3>
@@ -170,11 +221,39 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 BRAIN Lab. All rights reserved.</p>
+                <p>&copy; 2024 BRAIN Lab. All rights reserved.</p> 
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('nav ul.menu');
+            const header = document.querySelector('header'); // Get header for positioning
+
+            hamburger.addEventListener('click', function() {
+                // This just toggles display; a better implementation would use classes and transitions
+                const isDisplayed = menu.style.display === 'flex';
+                 if (isDisplayed) {
+                    menu.style.display = 'none';
+                 } else {
+                    menu.style.display = 'flex';
+                    menu.style.flexDirection = 'column'; // Adjust for vertical layout
+                    menu.style.position = 'absolute'; // Example positioning
+                    menu.style.backgroundColor = '#f8f9fa';
+                    menu.style.width = '100%';
+                    menu.style.left = '0';
+                    menu.style.top = header.offsetHeight + 'px'; // Position below header
+                    menu.style.padding = '1rem 0';
+                    menu.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)'; // Add shadow for visibility
+                    menu.querySelectorAll('li').forEach(li => {
+                         li.style.marginLeft = '1rem';
+                         li.style.padding = '0.5rem 0'; // Add padding for touch targets
+                     });
+                 }
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>

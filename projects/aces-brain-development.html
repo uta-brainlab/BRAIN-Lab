@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Styles */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; } /* Add mobile menu JS if needed */
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+
+        /* Page Header (Simplified for Project Pages) */
+        .page-header {
+            background-color: #0056b3; /* Simple background */
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin: 0; }
+
+        /* Project Content Styles */
+        .project-content-section { padding: 3rem 0; }
+        .project-content-section h2 { font-family: 'Roboto', sans-serif; font-size: 2rem; color: #0056b3; margin-bottom: 1.5rem; }
+        .project-content-section p, .project-content-section ul { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; }
+        .project-content-section ul { list-style: disc; padding-left: 1.5rem; }
+        .project-content-section li { margin-bottom: 0.5rem; }
+
+        /* Footer (Consistent Styles) */
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,51 +72,56 @@
                     <li><a href="../about.html">About</a></li>
                     <li><a href="../team.html">Team</a></li>
                     <li><a href="../publications.html">Publications</a></li>
-                    <li><a href="../projects.html" class="active">Projects</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../grants.html">Grants</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="project-profile">
+        <section class="page-header">
             <div class="container">
-                <div class="project-header">
-                    <h1>ACEs and Brain Development in Adolescence</h1>
-                </div>
-                
-                <div class="project-description">
-                    <p>
-                        This project investigates the role of Adverse Childhood Experiences (ACEs) and sex differences 
-                        in brain development during adolescence using data from the ABCD Study. Our research aims to 
-                        understand how early life experiences shape brain development and contribute to mental health 
-                        outcomes.
-                    </p>
-                    
-                    <h2>Key Research Questions</h2>
-                    <ul>
-                        <li>How do ACEs affect brain development during adolescence?</li>
-                        <li>What are the sex differences in brain development patterns?</li>
-                        <li>How do ACEs interact with sex to influence brain development?</li>
-                        <li>What are the long-term implications for mental health?</li>
-                    </ul>
+                 <h1>ACEs and Brain Development in Adolescence</h1>
+            </div>
+        </section>
+        
+        <section class="project-content-section">
+            <div class="container">
+                <h2>Project Overview</h2>
+                <p>This project investigates the impact of Adverse Childhood Experiences (ACEs) and sex differences on brain development during adolescence, utilizing data from the large-scale Adolescent Brain Cognitive Development (ABCD) Study. We aim to understand how early life stress interacts with biological sex to shape neural trajectories during this critical developmental period.</p>
+            </div>
+        </section>
 
-                    <h2>Methodology</h2>
-                    <p>
-                        We analyze longitudinal neuroimaging data from the ABCD Study, examining structural and 
-                        functional brain changes in relation to ACEs and sex differences. Our approach combines 
-                        advanced statistical modeling with machine learning techniques to identify patterns of 
-                        brain development.
-                    </p>
+        <section class="project-content-section">
+            <div class="container">
+                <h2>Key Research Questions</h2>
+                 <ul>
+                    <li>How do different types and timing of ACEs impact adolescent brain structure and function?</li>
+                    <li>Are there sex-specific effects of ACEs on brain development pathways?</li>
+                    <li>Which neural circuits are most vulnerable to the effects of early adversity?</li>
+                    <li>Can we identify biomarkers that predict long-term outcomes following ACEs exposure?</li>
+                </ul>
+            </div>
+        </section>
 
-                    <h2>Current Status</h2>
-                    <p>
-                        We are currently analyzing the latest ABCD Study data to identify patterns of brain 
-                        development associated with ACEs and sex differences, with a focus on understanding 
-                        potential protective factors and intervention opportunities.
-                    </p>
-                </div>
+        <section class="project-content-section">
+            <div class="container">
+                <h2>Methodology</h2>
+                <p>We employ advanced computational methods, including machine learning and network modeling, applied to the multimodal neuroimaging (structural MRI, fMRI, DTI) and behavioral data from the ABCD Study. Longitudinal analyses track developmental changes over time.</p>
+            </div>
+        </section>
+
+        <section class="project-content-section">
+            <div class="container">
+                <h2>Current Status</h2>
+                 <p>Analyses are ongoing, focusing on identifying specific patterns of brain alteration linked to ACEs and exploring how these differ between males and females. Initial findings highlight the importance of considering both ACEs and sex in understanding adolescent brain development.</p>
             </div>
         </section>
     </main>
@@ -78,16 +135,13 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
-                    <p>Email: xi.zhu@uta.edu</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../about.html">About</a></li>
-                        <li><a href="../team.html">Team</a></li>
-                        <li><a href="../publications.html">Publications</a></li>
-                    </ul>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
                 </div>
                 <div class="footer-col">
                     <h3>Follow Us</h3>
@@ -105,51 +159,5 @@
     </footer>
 
     <script src="../js/script.js"></script>
-
-    <style>
-        .project-profile {
-            padding: 4rem 0;
-            color: #2c3e50;
-        }
-        
-        .project-header {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .project-header h1 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        
-        .project-description {
-            background-color: white;
-            padding: 2rem;
-            color: #2c3e50;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .project-description h2 {
-            color: #2c3e50;
-            margin: 2rem 0 1rem;
-        }
-        
-        .project-description p {
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-description ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-description li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-    </style>
 </body>
 </html> 

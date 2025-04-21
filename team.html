@@ -7,6 +7,101 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Styles */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; } /* Add mobile menu JS if needed */
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+
+        /* Page Header */
+        .page-header {
+            background-image: url('images/banner.png');
+            background-size: cover; /* Use cover for better responsiveness */
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            background-color: #4682B4; /* Fallback color */
+        }
+        .page-header::before { /* Optional overlay */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
+        .page-header .container { position: relative; z-index: 2; }
+
+        /* Team Specific Styles */
+        .member-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .member-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+        }
+        .member-links a:hover {
+            color: #3498db;
+        }
+        .member-links .read-more {
+            color: #3498db;
+        }
+        .member-links i {
+            width: 1rem;
+            text-align: center;
+            margin-right: 0.25rem;
+        }
+        .team-member {
+            display: flex;
+            flex-direction: column;
+        }
+        .member-bio {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer (Consistent Styles) */
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -85,7 +180,7 @@
 
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="team members/Kangyi_Peng_Updated.JPG" alt="Kangyi Peng">
+                            <img src="team members/Kangyi_Peng_Updated.jpg" alt="Kangyi Peng">
                         </div>
                         <h3>Kangyi Peng</h3>
                         <p class="member-title">Research Coordinator</p>
@@ -161,16 +256,13 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
-                    <p>Email: xi.zhu@uta.edu</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                    </ul>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
                 </div>
                 <div class="footer-col">
                     <h3>Follow Us</h3>
@@ -188,70 +280,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-
-    <style>
-        .member-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        .member-links a {
-            color: #2c3e50;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            padding: 0.25rem 0;
-        }
-        .member-links a:hover {
-            color: #3498db;
-        }
-        .member-links .read-more {
-            color: #3498db;
-        }
-        .member-links i {
-            width: 1rem;
-            text-align: center;
-            margin-right: 0.25rem;
-        }
-        .team-member {
-            display: flex;
-            flex-direction: column;
-        }
-        .member-bio {
-            flex-grow: 1;
-            margin-bottom: 1rem;
-        }
-        .page-header {
-            background-image: url('images/banner.png');
-            background-size: 100% auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 4rem 0;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
 </body>
 </html> 

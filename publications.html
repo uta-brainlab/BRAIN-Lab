@@ -4,38 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRAIN Lab @ UTA - Publications</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Basic Styles (Keep consistent with original, adding publication-specific ones) */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; } /* Add mobile menu JS if needed */
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+
+        /* Page Header */
         .page-header {
-            background-image: url('images/banner.png');
-            background-size: 100% auto;
+            background-image: url('images/banner.png'); /* Ensure this image exists */
+            background-size: cover; /* Changed for better responsiveness */
             background-position: center;
             background-repeat: no-repeat;
             padding: 4rem 0;
             text-align: center;
             color: white;
             position: relative;
+            background-color: #4682B4; /* Fallback color */
         }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
+        .page-header::before { /* Optional overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
+        .page-header .container { position: relative; z-index: 2; }
+
+        /* Publications Section */
+        .publications-section { padding: 3rem 0; }
+        .publications-filter { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;}
+        .search-box { display: flex; border: 1px solid #ccc; border-radius: 4px; overflow: hidden; }
+        .search-box input { border: none; padding: 0.75rem; font-size: 1rem; outline: none; min-width: 250px;}
+        .search-box button { background-color: #0056b3; color: white; border: none; padding: 0 1rem; cursor: pointer; transition: background-color 0.3s ease; }
+        .search-box button:hover { background-color: #004494; }
+        .filter-options select { padding: 0.75rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 1rem; background-color: white; }
+
+        .publications-list .year-section { margin-bottom: 2.5rem; }
+        .publications-list h2 { font-family: 'Roboto', sans-serif; font-size: 1.8rem; color: #0056b3; border-bottom: 2px solid #e7e7e7; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        .publication-item { border: 1px solid #e7e7e7; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.5rem; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: box-shadow 0.3s ease; }
+        .publication-item:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .publication-meta { margin-bottom: 0.5rem; font-size: 0.9rem; color: #666; }
+        .publication-journal { font-weight: 600; }
+        .publication-item h3 { font-family: 'Roboto', sans-serif; font-size: 1.25rem; margin-top: 0; margin-bottom: 0.5rem; color: #333; }
+        .publication-authors { font-size: 1rem; color: #555; line-height: 1.5; }
+        .publication-authors strong { font-weight: 600; color: #000; } /* Highlight specific author */
+
+        /* Load More Button */
+        .hidden { display: none; }
+        .load-more-container { text-align: center; margin: 2rem 0; }
+        .primary-btn { padding: 1rem 2rem; font-size: 1.1rem; background-color: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease; }
+        .primary-btn:hover { background-color: #004494; }
+
+        /* Footer */
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .publications-filter { flex-direction: column; align-items: stretch; }
+            .search-box { width: 100%; margin-bottom: 1rem; }
+            .filter-options { display: flex; width: 100%; justify-content: space-between; }
+            .filter-options select { margin-left: 0; flex: 1; }
+            .filter-options select:not(:last-child) { margin-right: 1rem; }
+        }
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
+            .filter-options { flex-direction: column; gap: 1rem;}
+            .filter-options select:not(:last-child) { margin-right: 0; }
         }
 
-        .page-header .container {
-            position: relative;
-            z-index: 2;
-        }
     </style>
 </head>
 <body>
@@ -81,6 +143,8 @@
                     <div class="filter-options">
                         <select id="year-filter">
                             <option value="all">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -98,131 +162,462 @@
                 </div>
 
                 <div class="publications-list">
-                    <div class="year-section">
+                    <div class="year-section initial-visible">
+                        <h2>2025</h2>
+                        <div class="publication-items">
+                             <div class="publication-item" data-year="2025">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">npj Science of Learning</span>
+                                </div>
+                                <h3>Using Virtual Reality to Study Spatial Memory and Threat Learning</h3>
+                                <p class="publication-authors">Marino C, Rjabtsenkov P, Sharp C, Ali Z, Pineda E, Bavdekar S, Garg T, Jordan K, Halvorsen M, Aponte C, Blue J, <strong>Zhu X</strong>, Suarez-Jimenez B</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section initial-visible">
+                        <h2>2024</h2>
+                        <div class="publication-items">
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Machine Learning for Healthcare</span>
+                                </div>
+                                <h3>Network-Assisted Mediation Analysis with Neuroimaging Mediators</h3>
+                                <p class="publication-authors">Shi B, Liu Y, Xie S, <strong>Zhu X</strong>, Wang Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Human Brain Mapping</span>
+                                </div>
+                                <h3>Data-driven approach to dynamic resting state functional connectivity in post-traumatic stress disorder: An ENIGMA-PGC PTSD study</h3>
+                                <p class="publication-authors">Tomas et al.</p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychedelics</span>
+                                </div>
+                                <h3>Single-Dose Psilocybin Alters Resting State Functional Networks in Patients with Body Dysmorphic Disorder</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Zhang C, Hellerstein D, Feusner JD, Wheaton MG, Gomez G, Schneier F</p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">npj Mental Health Research</span> </div>
+                                <h3>Childhood Maltreatment Classification Approaches and their Associations with Trauma-Related Psychopathologies</h3>
+                                <p class="publication-authors">Haim-Nachum S, Amsalem D, Lazarov A, Soraya S, Neria Y, <strong>Zhu X</strong></p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Machine Learning for Healthcare</span>
+                                </div>
+                                <h3>Network-Assisted Mediation Discovery with Neuroimaging Mediators</h3>
+                                <p class="publication-authors">Li R, <strong>Zhu X</strong>, Lee S</p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Journal of Neuroscience</span>
+                                </div>
+                                <h3>Altered hierarchical gradients of intrinsic neural timescales in mild cognitive impairment and Alzheimer's disease</h3>
+                                <p class="publication-authors">Zhang A, Wengler K, <strong>Zhu X</strong>, Horga G, Goldberg TE, Lee S, and For Alzheimer's Disease Neuroimaging Initiative</p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Frontiers in Psychiatry</span>
+                                </div>
+                                <h3>Explaining Deep Learning-Based Representations of Resting State Functional Connectivity Data: Focusing on Interpreting Nonlinear Patterns in Autism Spectrum Disorder</h3>
+                                <p class="publication-authors">Kim Y, Ravid O, Zhang X, Kim Y, Neria Y, Lee S, He X, <strong>Zhu X</strong></p>
+                            </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Data Science in Science</span>
+                                </div>
+                                <h3>Model Selection for Exposure-Mediator Interaction</h3>
+                                <p class="publication-authors">Li R, <strong>Zhu X</strong>, Lee S</p> </div>
+                             <div class="publication-item" data-year="2024">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Molecular Psychiatry</span>
+                                </div>
+                                <h3>White matter diffusion estimates in obsessive-compulsive disorder across 1653 individuals: machine learning findings from the ENIGMA OCD Working Group</h3>
+                                <p class="publication-authors">Kim BG, Kim G, Abe Y, et al.</p>
+                            </div>
+                           </div>
+                    </div>
+
+                    <div class="year-section hidden">
                         <h2>2023</h2>
                         <div class="publication-items">
-                            <div class="publication-item" data-year="2023" data-topic="computational-psychiatry neuroimaging">
-                                <div class="publication-meta">
-                                    <span class="publication-date">August 2023</span>
-                                    <span class="publication-journal">Journal of Psychiatry Research</span>
+                             <div class="publication-item" data-year="2023"> <div class="publication-meta">
+                                    <span class="publication-journal">Neuropsychopharmacology</span>
                                 </div>
-                                <h3>Neural correlates of cognitive control in first episode psychosis: A functional connectivity study</h3>
-                                <p class="publication-authors">Smith J, Johnson R, <strong>Zhu X</strong>, Williams T, Davis A</p>
-                                <p class="publication-abstract">
-                                    This study investigates alterations in functional connectivity during cognitive control tasks in 
-                                    patients with first episode psychosis using advanced neuroimaging techniques. Results indicate 
-                                    significant differences in frontoparietal network connectivity associated with cognitive performance.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.psychres.2023.08.001</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                                </div>
+                                <h3>Examining the Association between Posttraumatic Stress Disorder and Disruptions in Cortical Networks Identified Using Data-Driven Methods</h3>
+                                <p class="publication-authors">Yang J, Huggins A, Sun D, Baird C, Haswell C, Frijling J, Olff M, van Zuiden M, Koch S, Nawijn L, Veltman D, Suarez-Jimenez B, <strong>Zhu X</strong>, Neria Y, Hudson A, Mueller S, Baker J, Lebois L, Kaufman M, Qi R, Lu G, Řiha P, Rektor I, Dennis E, Ching C, Thomopoulos S, Salminen L, Jahanshad N, Thompson P, Stein D, Koopowitz S, Ipser J, Seedat S, Plessis S, van den Heuvel L, Li Wang, Ye Zhu, Gen Li, Sierk A, Manthey A, Walter H, Daniels J, Schmahl C, Herzog J, Liberzon I, King A, Angstadt M, Davenport N, Sponheim S, Disner S, Straube T, Hofmann D, Grupe D, Nitschke J, Davidson R, Larson C, DeRoon-Cassini T, Blackford J, Olatunji B, Gordon E, May G, Nelson S, Abdallah C, Levy I, Harpaz-Rotem I, Krystal J, Morey R, and Sotiras A</p>
                             </div>
-                            
-                            <div class="publication-item" data-year="2023" data-topic="machine-learning cognitive-neuroscience">
+                            <div class="publication-item" data-year="2023">
                                 <div class="publication-meta">
-                                    <span class="publication-date">May 2023</span>
-                                    <span class="publication-journal">Frontiers in Computational Neuroscience</span>
+                                    <span class="publication-journal">Neuroimage</span>
                                 </div>
-                                <h3>Reinforcement learning models of decision-making in psychiatric disorders: A systematic review</h3>
-                                <p class="publication-authors">Chen Y, <strong>Zhu X</strong>, Rodriguez D, Thompson P</p>
-                                <p class="publication-abstract">
-                                    This review synthesizes current literature on reinforcement learning approaches to understanding 
-                                    altered decision-making processes in various psychiatric conditions, highlighting methodological 
-                                    advances and future research directions.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.3389/fncom.2023.123456</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                <h3>Neuroimaging-based classification of PTSD using data-driven computational approaches: A multisite big data study from the ENIGMA-PGC PTSD consortium</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Kim Y, Ravid O, He X, Suarez-Jimenez B, Zilcha-Mano S, Lazarov A, Lee S, Abdallah CG, Angstadt M, Averill CL, Baird CL, Baugh LA, Blackford JU, Bomyea J, Bruce SE, Bryant RA, Cao Z, Choi K, Cisler J, Cotton AS, Daniels JK, Davenport ND, Davidson RJ, DeBellis MD, Dennis EL, Densmore M, deRoon-Cassini T, Disner SG, Hage WE, Etkin A, Fani N, Fercho KA, Fitzgerald J, Forster GL, Frijling JL, Geuze E, Gonenc A, Gordon EM, Gruber S, Grupe DW, Guenette JP, Haswell CC, Herringa RJ, Herzog J, Hofmann DB, Hosseini B, Hudson AR, Huggins AA, Ipser JC, Jahanshad N, Jia-Richards M, Jovanovic T, Kaufman ML, King A, Kinzel P, Koch SBJ, Koerte IK, Koopowitz SM, Korgaonkar MS, Krystal JH, Lanius R, Larson CL, Lebois LAM, Li G, Liberzon I, Lu GM, Luo Y, Magnotta VA, Manthey A, Maron-Katz A, May G, McLaughlin K, Mueller SC, Nawijn L, Nelson SM, Neufeld RWJ, Nitschke JB, O'Leary EM, Olatunji BO, Olff M, Peverill M, Phan KL, Qi R, Quidé Y, Rektor I, Ressler K, Riha P, Ross M, Rosso IM, Salminen LE, Sambrook K, Schmahl C, Shenton ME, Sheridan M, Shih C, Sicorello M, Sierk A, Simmons AN, Simons RM, Simons JS, Sponheim SR, Stein MB, Stein DJ, Stevens JS, Straube T, Sun D, Théberge J, Thompson PM, Thomopoulos SI, van der Wee NJA, van der Werff SJA, van Erp TGM, van Rooij SJH, van Zuiden M, Varkevisser T, Veltman DJ, Vermeiren RRJM, Walter H, Wang L, Wang X, Weis C, Winternitz S, Xie H, Zhu Y, Wall M, Neria Y, Morey RA</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Molecular Psychiatry</span>
                                 </div>
+                                <h3>Smaller total and subregional cerebellar volumes in posttraumatic stress disorder: a mega-analysis by the ENIGMA-PGC PTSD workgroup</h3>
+                                <p class="publication-authors">Huggins A, C. Lexi Baird, Melvin Briggs, Sarah Laskowitz, Ahmed Hussain, Samar Fouda, Courtney Haswell, Delin Sun, Lauren Salminen, Neda Jahanshad, Sophia Thomopoulos, Dick Veltman, Jessie Frijling, Miranda Olff, Mirjam van Zuiden, Saskia Koch, Laura Nawijn, Li Wang, Ye Zhu, Gen Li, Dan Stein, Jonathan Ipser, Soraya Seedat, Stefan du Plessis, Leigh van den Heuvel, Benjamin Suarez-Jimenez, <strong>Xi Zhu</strong>, Yoojean Kim, Xiaofu He, Sigal Zilcha-Mano, Amit Lazarov, Yuval Neria, Jennifer Stevens, Kerry Ressler, Tanja Jovanovic, Sanne van Rooij, Negar Fani, Anna Hudson, Sven Mueller, Anika Sierk, Antje Manthey, Henrik Walter, Judith Daniels, Christian Schmahl, Julia Herzog, Pavel Řiha, Ivan Rektor, Lauren Lebois, Milissa Kaufman, Elizabeth Olson, Justin Baker, Isabelle Rosso, Anthony King, Israel Liberzon, Mike Angstadt, Nicholas Davenport, Scott Sponheim, Seth Disner, Thomas Straube, Davia Hofmann, Rongfeng Qi, Guangming Lu, Lee Baugh, Gina Forster, Raluca Simons, Jeffrey Simons, Vincent Magnotta, Kelene Fercho, Adi Maron-Katz, Amit Etkin, Andrew Cotton, Erin O'Leary, Hong Xie, Xin Wang, Yann Quidé, Wissam El-Hage, Shmuel Lissek, Hannah Berg, Steven Bruce, Josh Cisler, Marisa Ross, Ryan Herringa, Daniel Grupe, Jack Nitschke, Richard Davidson, Christine Larson, Terri deRoon-Cassini, Carissa Tomas, Jacklynn Fitzgerald, Jennifer Blackford, Bunmi Olatunji, William Kremen, Michael Lyons, Carol Franz, Evan Gordon, Geoffrey May, Steven Nelson,, Chadi Abdallah, Ifat Levy, Ilan Harpaz-Rotem, John Krystal, Emily Dennis, David Tate, David Cifu, William Walker, Elisabeth Wilde, Ian Harding, Rebecca Kerestes, Paul Thompson, and Rajendra Morey</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Molecular Psychiatry</span>
+                                </div>
+                                <h3>Resting-State Functional Connectivity Changes in Older Adults with Sleep Disturbance and the Role of Amyloid Burden</h3>
+                                <p class="publication-authors">Kim H, <strong>Zhu X</strong>, Zhao Y, Bell S, Gehrman P, Cohen D, Devanand DP, Goldberg TE, Lee S</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Biological Psychiatry: Global Open Science</span>
+                                </div>
+                                <h3>Brain Correlates of Intrusive Traumatic Re-experiencing Domain (ITRED) – Findings from the ENIGMA PTSD Consortium</h3>
+                                <p class="publication-authors">Suarez-Jimenez B*, Lazarov A*, <strong>Zhu X</strong>, Pine DS, Bar-Haim Y, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Journal of Anxiety Disorders</span>
+                                </div>
+                                <h3>Eye-tracking Indices of Attention Allocation and Attention Bias Variability Are Differently Related to Trauma Exposure and PTSD</h3>
+                                <p class="publication-authors">Alon Y, Bar-Haim Y, Gober CD, Suarez-Jimenez B, <strong>Zhu X</strong>, Neria Y, Lazarov A</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Frontiers Psychiatry</span>
+                                </div>
+                                <h3>Editorial: Women in Psychiatry 2022: Computational Psychiatry</h3>
+                                <p class="publication-authors">Han L, Dima D, <strong>Zhu X</strong>, Schmaal L</p>
+                            </div>
+                            <div class="publication-item" data-year="2023">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Biological Psychiatry: Global Open Science</span>
+                                </div>
+                                <h3>Underlying Hippocampal Mechanism of PTSD-Treatment Outcome: Evidence from Two Clinical Trials</h3>
+                                <p class="publication-authors">Zilcha-Mano S, Duek O, Suarez-Jimenez B, <strong>Zhu X</strong>, Lazarov A, Helpman L, Korem N, Malka M, Harpaz-Rotem I, Neria Y</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="year-section">
+
+                    <div class="year-section hidden">
                         <h2>2022</h2>
                         <div class="publication-items">
-                            <div class="publication-item" data-year="2022" data-topic="machine-learning neuroimaging">
+                            <div class="publication-item" data-year="2022">
                                 <div class="publication-meta">
-                                    <span class="publication-date">November 2022</span>
-                                    <span class="publication-journal">NeuroImage</span>
+                                    <span class="publication-journal">Communications Biology</span>
                                 </div>
-                                <h3>Deep variational autoencoders for neuroimaging data analysis</h3>
-                                <p class="publication-authors"><strong>Zhu X</strong>, Chen Y, Williams B, Johnson R, Davis T</p>
-                                <p class="publication-abstract">
-                                    This paper presents a novel deep variational autoencoder approach for dimensionality reduction and feature 
-                                    extraction from complex neuroimaging datasets, demonstrating improved performance in capturing meaningful 
-                                    patterns associated with psychiatric symptoms.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.neuroimage.2022.11.003</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                                </div>
+                                <h3>Sequential Fear Generalization and Network Connectivity in Trauma Exposed Humans With and Without Psychopathology</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Suarez-Jimenez B, Lindquist M, Lissek S, Neria Y</p>
                             </div>
-                            
-                            <div class="publication-item" data-year="2022" data-topic="computational-psychiatry">
+                            <div class="publication-item" data-year="2022">
                                 <div class="publication-meta">
-                                    <span class="publication-date">July 2022</span>
-                                    <span class="publication-journal">JAMA Psychiatry</span>
+                                    <span class="publication-journal">Depression and Anxiety</span>
                                 </div>
-                                <h3>Computational markers of cognitive dysfunction in schizophrenia: Evidence from a large multi-site study</h3>
-                                <p class="publication-authors">Johnson R, Davis A, <strong>Zhu X</strong>, Miller J, Wilson T, NAPLS Consortium</p>
-                                <p class="publication-abstract">
-                                    This multi-site study identifies computational markers derived from cognitive task performance that 
-                                    predict functional outcomes in schizophrenia, with potential implications for personalized 
-                                    treatment approaches targeting specific cognitive domains.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1001/jamapsychiatry.2022.1234</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                <h3>Elucidating Behavioral and Functional Connectivity Markers of Emotionally Aversive Versus Emotionally Neutral Discrimination in PTSD</h3>
+                                <p class="publication-authors">Keefe JR*, Suarez-Jimenez B*, <strong>Zhu X</strong>*, Lazarov A, Durosky A, SuchS , Marohasy C, Lissek S, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Neuroimage</span>
                                 </div>
+                                <h3>A comparison of methods to harmonize cortical thickness measurements across scanners and sites</h3>
+                                <p class="publication-authors">Sun D, Rakesh G, Haswell CC, Logue M, Baird CL, O'Leary EN, Cotton AS, Xie H, Tamburrino M, Chen T, Dennis EL, Jahanshad N, Salminen LE, Thomopoulos SI, Rashid F, Ching CRK, Koch SBJ, Frijling JL, Nawijn L, van Zuiden M, <strong>Zhu X</strong>, Suarez-Jimenez B, Sierk A, Walter H, Manthey A, Stevens JS, Fani N, van Rooij SJH, Stein M, Bomyea J, Koerte IK, Choi K, van der Werff SJA, Vermeiren RRJM, Herzog J, Lebois LAM, Baker JT, Olson EA, Straube T, Korgaonkar MS, Andrew E, Zhu Y, Li G, Ipser J, Hudson AR, Peverill M, Sambrook K, Gordon E, Baugh L, Forster G, Simons RM, Simons JS, Magnotta V, Maron-Katz A, du Plessis S, Disner SG, Davenport N, Grupe DW, Nitschke JB, deRoon-Cassini TA, Fitzgerald JM, Krystal JH, Levy I, Olff M, Veltman DJ, Wang L, Neria Y, De Bellis MD, Jovanovic T, Daniels JK, Shenton M, van de Wee NJA, Schmahl C, Kaufman ML, Rosso IM, Sponheim SR, Hofmann DB, Bryant RA, Fercho KA, Stein DJ, Mueller SC, Hosseini B, Phan KL, McLaughlin KA, Davidson RJ, Larson CL, May G, Nelson SM, Abdallah CG, Gomaa H, Etkin A, Seedat S, Harpaz-Rotem I, Liberzon I, van Erp TGM, Quidé Y, Wang X, Thompson PM, Morey RA</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Neuroimage</span>
+                                </div>
+                                <h3>Transfer learning for cognitive reserve quantification</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Liu Y, Habeck CG, Stern Y, Lee S, For-The-Alzheimer's-Disease-Neuroimaging-Initiative</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Biol Psychiatry Cogn Neurosci Neuroimaging</span>
+                                </div>
+                                <h3>Remodeling of the Cortical Structural Connectome in Posttraumatic Stress Disorder: Results From the ENIGMA-PGC Posttraumatic Stress Disorder Consortium</h3>
+                                <p class="publication-authors">Sun D, Rakesh G, Clarke-Rubright EK, Haswell CC, Logue MW, O'Leary EN, Cotton AS, Xie H, Dennis EL, Jahanshad N, Salminen LE, Thomopoulos SI, Rashid FM, Ching CRK, Koch SBJ, Frijling JL, Nawijn L, van Zuiden M, <strong>Zhu X</strong>, Suarez-Jimenez B, Sierk A, Walter H, Manthey A, Stevens JS, Fani N, van Rooij SJH, Stein MB, Bomyea J, Koerte I, Choi K, van der Werff SJA, Vermeiren RRJM, Herzog JI, Lebois LAM, Baker JT, Ressler KJ, Olson EA, Straube T, Korgaonkar MS, Andrew E, Zhu Y, Li G, Ipser J, Hudson AR, Peverill M, Sambrook K, Gordon E, Baugh LA, Forster G, Simons RM, Simons JS, Magnotta VA, Maron-Katz A, du Plessis S, Disner SG, Davenport ND, Grupe D, Nitschke JB, deRoon-Cassini TA, Fitzgerald J, Krystal JH, Levy I, Olff M, Veltman DJ, Wang L, Neria Y, De Bellis MD, Jovanovic T, Daniels JK, Shenton ME, van de Wee NJA, Schmahl C, Kaufman ML, Rosso IM, Sponheim SR, Hofmann DB, Bryant RA, Fercho KA, Stein DJ, Mueller SC, Phan KL, McLaughlin KA, Davidson RJ, Larson C, May G, Nelson SM, Abdallah CG, Gomaa H, Etkin A, Seedat S, Harpaz-Rotem I, Liberzon I, Wang X, Thompson PM, Morey RA</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Depress Anxiety</span>
+                                </div>
+                                <h3>Structural brain features signaling trauma, PTSD, or resilience? A systematic exploration</h3>
+                                <p class="publication-authors">Zilcha-Mano S, <strong>Zhu X</strong>, Lazarov A, Suarez-Jimenez B, Helpman L, Kim Y, Maitlin C, Neria Y, Rutherford BR</p>
+                            </div>
+                             <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Front Psychiatry</span>
+                                </div>
+                                <h3>Neurobiological Alterations in Females With PTSD: A Systematic Review</h3>
+                                <p class="publication-authors">Eder-Moreau E, <strong>Zhu X</strong>, Fisch CT, Bergman M, Neria Y, Helpman L</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Attention allocation to negatively-valenced stimuli in PTSD is associated with reward-related neural pathways</h3>
+                                <p class="publication-authors">Suarez-Jimenez B, Lazarov A, <strong>Zhu X</strong>, Pine DS, Bar-Haim Y, Neria Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Trauma</span>
+                                </div>
+                                <h3>Treatment dropout among veterans and their families: Quantitative and qualitative findings</h3>
+                                <p class="publication-authors">Amsalem D, Lopez-Yianilos A, Lowell A, Pickover AM, Arnon S, <strong>Zhu X</strong>, Suarez-Jimenez B, Ryba M, Bergman M, Such S, Zalman H, Sanchez-Lacay A, Lazarov A, Markowitz JC, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Resting state connectivity predictors of symptom change during gaze-contingent music reward therapy of social anxiety disorder</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Lazarov A, Dolan S, Bar-Haim Y, Dillon DG, Pizzagalli DA, Schneier F</p>
+                            </div>
+                            <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Biol Psychiatry Cogn Neurosci Neuroimaging</span>
+                                </div>
+                                <h3>Identifying Neurobiological Markers of Posttraumatic Stress Disorder Using Resting-State Functional Magnetic Resonance Imaging Data: The Promise of Data-Driven Computational Approaches</h3>
+                                <p class="publication-authors">Neria Y, Lazarov A, <strong>Zhu X</strong></p>
+                            </div>
+                             <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Brain Behavior</span>
+                                </div>
+                                <h3>Assessment of brain age in posttraumatic stress disorder: Findings from the ENIGMA PTSD and brain age working groups</h3>
+                                <p class="publication-authors">Clausen AN, Fercho KA, Monsour M, Disner S, Salminen L, Haswell CC, Rubright EC, Watts AA, Buckley MN, Maron-Katz A, Sierk A, Manthey A, Suarez-Jimenez B, Olatunji BO, Averill CL, Hofmann D, Veltman DJ, Olson EA, Li G, Forster GL, Walter H, Fitzgerald J, Théberge J, Simons JS, Bomyea JA, Frijling JL, Krystal JH, Baker JT, Phan KL, Ressler K, Han LKM, Nawijn L, Lebois LAM, Schmaal L, Densmore M, Shenton ME, van Zuiden M, Stein M, Fani N, Simons RM, Neufeld RWJ, Lanius R, van Rooij S, Koch SBJ, Bonomo S, Jovanovic T, deRoon-Cassini T, Ely TD, Magnotta VA, He X, Abdallah CG, Etkin A, Schmahl C, Larson C, Rosso IM, Blackford JU, Stevens JS, Daniels JK, Herzog J, Kaufman ML, Olff M, Davidson RJ, Sponheim SR, Mueller SC, Straube T, <strong>Zhu X</strong>, Neria Y, Baugh LA, Cole JH, Thompson PM, Morey RA</p>
+                            </div>
+                             <div class="publication-item" data-year="2022">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Alzheimers Dis</span>
+                                </div>
+                                <h3>The Role of Amyloid, Tau, and APOE Genotype on the Relationship Between Informant-Reported Sleep Disturbance and Alzheimer's Disease Risks</h3>
+                                <p class="publication-authors">Kim H, Levine A, Cohen D, Gehrman P, <strong>Zhu X</strong>, Devanand DP, Lee S, Goldberg TE</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="year-section">
+
+                    <div class="year-section hidden">
                         <h2>2021</h2>
                         <div class="publication-items">
-                            <div class="publication-item" data-year="2021" data-topic="computational-psychiatry cognitive-neuroscience">
+                           <div class="publication-item" data-year="2021">
                                 <div class="publication-meta">
-                                    <span class="publication-date">December 2021</span>
-                                    <span class="publication-journal">Annual Review of Neuroscience</span>
+                                    <span class="publication-journal">Neurobiol Stress</span>
                                 </div>
-                                <h3>Computational approaches to understanding psychiatric disorders</h3>
-                                <p class="publication-authors"><strong>Zhu X</strong>, Miller J, Davis T, Wilson R, Thompson P</p>
-                                <p class="publication-abstract">
-                                    This review paper provides a comprehensive overview of computational methods being applied to 
-                                    understand the neural and cognitive mechanisms underlying psychiatric disorders, discussing 
-                                    both challenges and promising future directions for the field.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1146/annurev-neuro-093019-110048</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                                </div>
+                                <h3>Reversed patterns of resting state functional connectivity for females vs. males in posttraumatic stress disorder</h3>
+                                <p class="publication-authors">Helpman L, <strong>Zhu X</strong>, Zilcha-Mano S, Suarez-Jimenez B, Lazarov A, Rutherford B, Neria Y</p>
                             </div>
-                            
-                            <div class="publication-item" data-year="2021" data-topic="neuroimaging machine-learning">
+                             <div class="publication-item" data-year="2021">
                                 <div class="publication-meta">
-                                    <span class="publication-date">June 2021</span>
-                                    <span class="publication-journal">Nature Communications</span>
+                                    <span class="publication-journal">J Clin Psychiatry</span>
                                 </div>
-                                <h3>Identifying transdiagnostic dimensions of brain dysfunction using multimodal neuroimaging and machine learning</h3>
-                                <p class="publication-authors">Miller J, <strong>Zhu X</strong>, Smith J, Chen Y, International Consortium for Brain Mapping</p>
-                                <p class="publication-abstract">
-                                    This study employs advanced machine learning techniques to analyze multimodal neuroimaging data 
-                                    across diagnostic categories, identifying transdiagnostic dimensions of brain dysfunction that 
-                                    may provide more biologically meaningful targets for intervention.
-                                </p>
-                                <div class="publication-links">
-                                    <a href="#" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI: 10.1038/s41467-021-23456-7</a>
-                                    <a href="#" class="pdf-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                <h3>Equine-Assisted Therapy for Posttraumatic Stress Disorder Among Military Veterans: An Open Trial</h3>
+                                <p class="publication-authors">Fisher PW, Lazarov A, Lowell A, Arnon S, Turner JB, Bergman M, Ryba M, Such S, Marohasy C, <strong>Zhu X</strong>, Suarez-Jimenez B, Markowitz JC, Neria Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2021">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Mol Psychiatry</span>
                                 </div>
+                                <h3>Cortical volume abnormalities in posttraumatic stress disorder: an ENIGMA-psychiatric genomics consortium PTSD workgroup mega-analysis</h3>
+                                <p class="publication-authors">Wang X, Xie H, Chen T, Cotton AS, Salminen LE, Logue MW, Clarke-Rubright EK, Wall J, Dennis EL, O'Leary BM, Abdallah CG, Andrew E, Baugh LA, Bomyea J, Bruce SE, Bryant R, Choi K, Daniels JK, Davenport ND, Davidson RJ, DeBellis M, deRoon-Cassini T, Disner SG, Fani N, Fercho KA, Fitzgerald J, Forster GL, Frijling JL, Geuze E, Gomaa H, Gordon EM, Grupe D, Harpaz-Rotem I, Haswell CC, Herzog JI, Hofmann D, Hollifield M, Hosseini B, Hudson AR, Ipser J, Jahanshad N, Jovanovic T, Kaufman ML, King AP, Koch SBJ, Koerte IK, Korgaonkar MS, Krystal JH, Larson C, Lebois LAM, Levy I, Li G, Magnotta VA, Manthey A, May G, McLaughlin KA, Mueller SC, Nawijn L, Nelson SM, Neria Y, Nitschke JB, Olff M, Olson EA, Peverill M, Luan Phan K, Rashid FM, Ressler K, Rosso IM, Sambrook K, Schmahl C, Shenton ME, Sierk A, Simons JS, Simons RM, Sponheim SR, Stein MB, Stein DJ, Stevens JS, Straube T, Suarez-Jimenez B, Tamburrino M, Thomopoulos SI, van der Wee NJA, van der Werff SJA, van Erp TGM, van Rooij SJH, van Zuiden M, Varkevisser T, Veltman DJ, Vermeiren RRJM, Walter H, Wang L, Zhu Y, <strong>Zhu X</strong>, Thompson PM, Morey RA, Liberzon I</p>
+                            </div>
+                             <div class="publication-item" data-year="2021">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Mol Psychiatry</span>
+                                </div>
+                                <h3>Altered white matter microstructural organization in posttraumatic stress disorder across 3047 adults: results from the PGC-ENIGMA PTSD consortium</h3>
+                                <p class="publication-authors">Dennis EL, Disner SG, Fani N, Salminen LE, Logue M, Clarke EK, Haswell CC, Averill CL, Baugh LA, Bomyea J, Bruce SE, Cha J, Choi K, Davenport ND, Densmore M, du Plessis S, Forster GL, Frijling JL, Gonenc A, Gruber S, Grupe DW, Guenette JP, Hayes J, Hofmann D, Ipser J, Jovanovic T, Kelly S, Kennis M, Kinzel P, Koch SBJ, Koerte I, Koopowitz S, Korgaonkar M, Krystal J, Lebois LAM, Li G, Magnotta VA, Manthey A, May GJ, Menefee DS, Nawijn L, Nelson SM, Neufeld RWJ, Nitschke JB, O'Doherty D, Peverill M, Ressler KJ, Roos A, Sheridan MA, Sierk A, Simmons A, Simons RM, Simons JS, Stevens J, Suarez-Jimenez B, Sullivan DR, Théberge J, Tran JK, van den Heuvel L, van der Werff SJA, van Rooij SJH, van Zuiden M, Velez C, Verfaellie M, Vermeiren RRJM, Wade BSC, Wager T, Walter H, Winternitz S, Wolff J, York G, Zhu Y, <strong>Zhu X</strong>, Abdallah CG, Bryant R, Daniels JK, Davidson RJ, Fercho KA, Franz C, Geuze E, Gordon EM, Kaufman ML, Kremen WS, Lagopoulos J, Lanius RA, Lyons MJ, McCauley SR, McGlinchey R, McLaughlin KA, Milberg W, Neria Y, Olff M, Seedat S, Shenton M, Sponheim SR, Stein DJ, Stein MB, Straube T, Tate DF, van der Wee NJA, Veltman DJ, Wang L, Wilde EA, Thompson PM, Kochunov P, Jahanshad N, Morey RA</p>
+                            </div>
+                             <div class="publication-item" data-year="2021">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Hum Brain Mapp</span>
+                                </div>
+                                <h3>Neural changes following equine-assisted therapy for posttraumatic stress disorder: A longitudinal multimodal imaging study</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Suarez-Jimenez B, Zilcha-Mano S, Lazarov A, Arnon S, Lowell AL, Bergman M, Ryba M, Hamilton AJ, Hamilton JF, Turner JB, Markowitz JC, Fisher PW, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2021">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Attention allocation in posttraumatic stress disorder: an eye-tracking study</h3>
+                                <p class="publication-authors">Lazarov A, Suarez-Jimenez B, <strong>Zhu X</strong>, Pine DS, Bar-Haim Y, Neria Y</p>
                             </div>
                         </div>
                     </div>
+
+                     <div class="year-section hidden">
+                        <h2>2020</h2>
+                        <div class="publication-items">
+                            <div class="publication-item" data-year="2020">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Biol Psychiatry Cogn Neurosci Neuroimaging</span>
+                                </div>
+                                <h3>Diagnostic and Predictive Neuroimaging Biomarkers for Posttraumatic Stress Disorder</h3>
+                                <p class="publication-authors">Zilcha-Mano S*, <strong>Zhu X*</strong>, Suarez-Jimenez B, Pickover A, Tal S, Such S, Marohasy C, Chrisanthopoulos M, Salzman C, Lazarov A, Neria Y, Rutherford BR</p>
+                            </div>
+                             <div class="publication-item" data-year="2020">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Neural signatures of conditioning, extinction learning, and extinction recall in posttraumatic stress disorder: a meta-analysis of functional magnetic resonance imaging studies</h3>
+                                <p class="publication-authors">Suarez-Jimenez B, Albajes-Eizagirre A, Lazarov A, <strong>Zhu X</strong>, Harrison BJ, Radua J, Neria Y, Fullana MA</p>
+                            </div>
+                            <div class="publication-item" data-year="2020">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Anterior hippocampal volume predicts affect-focused psychotherapy outcome</h3>
+                                <p class="publication-authors">Suarez-Jimenez B*, <strong>Zhu X*</strong>, Lazarov A, Mann JJ, Schneier F, Gerber A, Barber JP, Chambless DL, Neria Y, Milrod B, Markowitz JC</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section hidden">
+                        <h2>2019 & Older</h2>
+                        <div class="publication-items">
+                            <div class="publication-item" data-year="2019">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Bias-contingent attention bias modification and attention control training in treatment of PTSD: a randomized control trial</h3>
+                                <p class="publication-authors">Lazarov A, Suarez-Jimenez B, Abend R, Naim R, Shvil E, Helpman L, <strong>Zhu X</strong>, Papini S, Duroski A, Rom R, Schneier FR, Pine DS, Bar-Haim Y, Neria Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2019">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>Attention to threat in posttraumatic stress disorder as indexed by eye-tracking indices: a systematic review</h3>
+                                <p class="publication-authors">Lazarov A, Suarez-Jimenez B, Tamman A, Falzon L, <strong>Zhu X</strong>, Edmondson DE, Neria Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2018">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Depress Anxiety</span>
+                                </div>
+                                <h3>Exposure-based therapy changes amygdala and hippocampus resting-state functional connectivity in patients with posttraumatic stress disorder</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Suarez-Jimenez B, Lazarov A, Helpman L, Papini S, Lowell A, Durosky A, Lindquist MA, Markowitz JC, Schneier F, Wager TD, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2018">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Learn Disabil</span>
+                                </div>
+                                <h3>The Location and Effects of Visual Hemisphere-Specific Stimulation on Reading Fluency in Children With the Characteristics of Dyslexia</h3>
+                                <p class="publication-authors">Koen BJ, Hawkins J, <strong>Zhu X</strong>, Jansen B, Fan W, Johnson S</p>
+                            </div>
+                            <div class="publication-item" data-year="2018">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Neurosci Lett</span>
+                                </div>
+                                <h3>Random forest based classification of alcohol dependence patients and healthy controls using resting state MRI</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Du X, Kerich M, Lohoff FW, Momenan R</p>
+                            </div>
+                             <div class="publication-item" data-year="2018">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Alcohol Alcohol</span>
+                                </div>
+                                <h3>Insula Sensitivity to Unfairness in Alcohol Use Disorder</h3>
+                                <p class="publication-authors">Cortes CR, Grodin EN, Mann CL, Mathur K, Kerich M, <strong>Zhu X</strong>, Schwandt M, Diazgranados N, George DT, Momenan R, Heilig M</p>
+                            </div>
+                            <div class="publication-item" data-year="2018">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Psychol Med</span>
+                                </div>
+                                <h3>9/11-related PTSD among highly exposed populations: a systematic review 15 years after the attack</h3>
+                                <p class="publication-authors">Lowell A, Suarez-Jimenez B, Helpman L, <strong>Zhu X</strong>, Durosky A, Hilburn A, Schneier F, Gross R, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2017">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Curr Psychiatry Rep</span>
+                                </div>
+                                <h3>Sex Differences in Trauma-Related Psychopathology: a Critical Review of Neuroimaging Literature (2014-2017)</h3>
+                                <p class="publication-authors">Helpman L, <strong>Zhu X</strong>, Suarez-Jimenez B, Lazarov A, Monk C, Neria Y</p>
+                            </div>
+                             <div class="publication-item" data-year="2017">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Psychiatry Neurosci</span>
+                                </div>
+                                <h3>Basolateral amygdala-ventromedial prefrontal cortex connectivity predicts cognitive behavioural therapy outcome in adults with obsessive-compulsive disorder</h3>
+                                <p class="publication-authors">Fullana MA*, <strong>Zhu X*</strong>, Alonso P, Cardoner N, Real E, López-Solà C, Segalàs C, Subirà M, Galfalvy H, Menchón JM, Simpson HB, Marsh R, Soriano-Mas C</p>
+                            </div>
+                            <div class="publication-item" data-year="2017">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Psychiatr Res</span>
+                                </div>
+                                <h3>Resting-state functional connectivity of anterior and posterior hippocampus in posttraumatic stress disorder</h3>
+                                <p class="publication-authors">Lazarov A*, <strong>Zhu X*</strong>, Suarez-Jimenez B, Rutherford BR, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2017">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Depress Anxiety</span>
+                                </div>
+                                <h3>Altered resting state functional connectivity of fear and reward circuitry in comorbid PTSD and major depression</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Helpman L, Papini S, Schneier F, Markowitz JC, Van Meter PE, Lindquist MA, Wager TD, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2017">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Addict Biol</span>
+                                </div>
+                                <h3>Model-free functional connectivity and impulsivity correlates of alcohol dependence: a resting-state study</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Cortes CR, Mathur K, Tomasi D, Momenan R</p>
+                            </div>
+                            <div class="publication-item" data-year="2016">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Neuroimage Clin</span>
+                                </div>
+                                <h3>Neural changes in extinction recall following prolonged exposure treatment for PTSD: A longitudinal fMRI study</h3>
+                                <p class="publication-authors">Helpman L, Marin MF, Papini S , <strong>Zhu X</strong> , Sullivan GM, Schneier F, Neria M, Shvil E, Malaga Aragon MJ, Markowitz JC, Lindquist MA, Wager T, Milad M, Neria Y</p>
+                            </div>
+                            <div class="publication-item" data-year="2016">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Front Hum Neurosci</span>
+                                </div>
+                                <h3>Alcohol Dependence and Altered Engagement of Brain Networks in Risky Decisions</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Sundby K, Bjork JM, Momenan R</p>
+                            </div>
+                            <div class="publication-item" data-year="2016">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Alcohol Clin Exp Res</span>
+                                </div>
+                                <h3>Genetic Variation in the Vesicular Monoamine Transporter 1 (VMAT1/SLC18A1) Gene and Alcohol Withdrawal Severity</h3>
+                                <p class="publication-authors">Dutta N, Helton SG, Schwandt M, <strong>Zhu X</strong>, Momenan R, Lohoff FW</p>
+                            </div>
+                            <div class="publication-item" data-year="2015">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">Hum Brain Mapp</span>
+                                </div>
+                                <h3>Resting-state functional connectivity and presynaptic monoamine signaling in Alcohol Dependence</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Dutta N, Helton SG, Schwandt M, Yan J, Hodgkinson CA, Cortes CR, Kerich M, Hall S, Sun H, Phillips M, Momenan R, Lohoff FW</p>
+                            </div>
+                            <div class="publication-item" data-year="2015">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Integr Neurosci</span>
+                                </div>
+                                <h3>A method to analyze low signal-to-noise ratio functional magnetic resonance imaging data</h3>
+                                <p class="publication-authors"><strong>Zhu X</strong>, Kayali MA, Jansen BH</p>
+                            </div>
+                             <div class="publication-item" data-year="2012">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">J Emerg Med</span>
+                                </div>
+                                <h3>Impact of visual art on patient behavior in the emergency department waiting room</h3>
+                                <p class="publication-authors">Nanda U, Chanaud C, Nelson M, <strong>Zhu X</strong>, Bajema R, Jansen BH</p>
+                            </div>
+                            <div class="publication-item" data-year="2012">
+                                <div class="publication-meta">
+                                    <span class="publication-journal">HERD</span>
+                                </div>
+                                <h3>Image and emotion: from outcomes to brain behavior</h3>
+                                <p class="publication-authors">Nanda U, <strong>Zhu X</strong>, Jansen BH</p>
+                            </div>
+                        </div>
+                    </div>
+                 </div> <div class="load-more-container">
+                    <button id="load-more-btn" class="primary-btn">Load More Publications</button>
                 </div>
-            </div>
-        </section>
+
+            </div> </section>
     </main>
 
     <footer>
@@ -234,16 +629,13 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
-                    <p>Email: xi.zhu@uta.edu</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                    </ul>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
                 </div>
                 <div class="footer-col">
                     <h3>Follow Us</h3>
@@ -260,63 +652,159 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
     <script>
-        // Publications search and filter functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // --- Load More Functionality ---
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            // Select all year sections initially marked as hidden
+            const hiddenSections = document.querySelectorAll('.year-section.hidden');
+            let sectionsToShow = Array.from(hiddenSections); // Convert NodeList to Array
+
+            if (sectionsToShow.length === 0) {
+                loadMoreBtn.style.display = 'none'; // Hide button if nothing is hidden
+            }
+
+            loadMoreBtn.addEventListener('click', function() {
+                // Show all remaining hidden sections at once
+                sectionsToShow.forEach(section => {
+                    section.classList.remove('hidden');
+                    section.classList.add('initial-visible'); // Optional: change class if needed
+                });
+                loadMoreBtn.style.display = 'none'; // Hide button after showing all
+            });
+
+
+            // --- Publications Search and Filter Functionality ---
             const searchInput = document.getElementById('publication-search');
             const yearFilter = document.getElementById('year-filter');
             const topicFilter = document.getElementById('topic-filter');
             const publicationItems = document.querySelectorAll('.publication-item');
-            const yearSections = document.querySelectorAll('.year-section');
-            
-            // Function to filter publications
+            const yearSections = document.querySelectorAll('.year-section'); // Re-select all sections for filtering
+
             function filterPublications() {
-                const searchText = searchInput.value.toLowerCase();
+                const searchText = searchInput.value.toLowerCase().trim();
                 const yearValue = yearFilter.value;
-                const topicValue = topicFilter.value;
-                
-                publicationItems.forEach(item => {
-                    const title = item.querySelector('h3').textContent.toLowerCase();
-                    const authors = item.querySelector('.publication-authors').textContent.toLowerCase();
-                    const abstract = item.querySelector('.publication-abstract').textContent.toLowerCase();
-                    const year = item.getAttribute('data-year');
-                    const topics = item.getAttribute('data-topic').split(' ');
-                    
-                    const matchesSearch = title.includes(searchText) || 
-                                         authors.includes(searchText) || 
-                                         abstract.includes(searchText);
-                    
-                    const matchesYear = yearValue === 'all' || 
-                                       (yearValue === 'older' && parseInt(year) < 2020) || 
-                                       year === yearValue;
-                    
-                    const matchesTopic = topicValue === 'all' || 
-                                        topics.includes(topicValue);
-                    
-                    if (matchesSearch && matchesYear && matchesTopic) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-                
-                // Hide year sections with no visible publications
+                const topicValue = topicFilter.value; // Assuming data-topic might be added later
+
+                let hasVisibleItemsOverall = false;
+
                 yearSections.forEach(section => {
-                    const visibleItems = section.querySelectorAll('.publication-item[style=""]').length;
-                    if (visibleItems === 0) {
-                        section.style.display = 'none';
+                    let hasVisibleItemsInSection = false;
+                    const itemsInSection = section.querySelectorAll('.publication-item');
+
+                    itemsInSection.forEach(item => {
+                        const title = item.querySelector('h3') ? item.querySelector('h3').textContent.toLowerCase() : '';
+                        const authors = item.querySelector('.publication-authors') ? item.querySelector('.publication-authors').textContent.toLowerCase() : '';
+                        // const abstract = item.querySelector('.publication-abstract') ? item.querySelector('.publication-abstract').textContent.toLowerCase() : ''; // Add if abstracts are present
+                        const year = item.getAttribute('data-year');
+                        // const topics = item.getAttribute('data-topic') ? item.getAttribute('data-topic').split(' ') : []; // Add if topics are present
+
+                        // Check search match (title and authors only for now)
+                        const matchesSearch = searchText === '' || title.includes(searchText) || authors.includes(searchText); // || abstract.includes(searchText);
+
+                        // Check year match
+                        const matchesYear = yearValue === 'all' ||
+                                           (yearValue === 'older' && parseInt(year) < 2020) ||
+                                           year === yearValue;
+
+                        // Check topic match (assuming 'all' or specific topic)
+                        const matchesTopic = topicValue === 'all'; // || topics.includes(topicValue); // Enable if topics are used
+
+
+                        if (matchesSearch && matchesYear && matchesTopic) {
+                            item.style.display = '';
+                            hasVisibleItemsInSection = true;
+                            hasVisibleItemsOverall = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Show/hide the entire year section based on whether it contains visible items
+                    // Only hide if filtering is active (search text or non-'all' filters)
+                    if (!hasVisibleItemsInSection && (searchText !== '' || yearValue !== 'all' || topicValue !== 'all')) {
+                         // Check if the section itself should be visible based on the "Load More" state
+                         if (section.classList.contains('initial-visible')) {
+                             section.style.display = 'none';
+                         }
+                         // Keep hidden sections hidden unless they contain matches
+                         else if (section.classList.contains('hidden')) {
+                             section.style.display = 'none';
+                         }
                     } else {
-                        section.style.display = '';
+                         // Ensure section is visible if it has matching items OR if no filters are active
+                         // Check visibility based on "Load More" state as well
+                         if (section.classList.contains('initial-visible') || section.classList.contains('hidden')) {
+                            // Show the section if it has visible items or if no filters are active.
+                            // Respect the 'hidden' class set by the Load More functionality if no items match.
+                            if (hasVisibleItemsInSection || (searchText === '' && yearValue === 'all' && topicValue === 'all')) {
+                                 if (!section.classList.contains('hidden')) { // Don't show sections meant to be hidden by "Load More" unless they match filter
+                                     section.style.display = '';
+                                 } else if (hasVisibleItemsInSection) { // Show hidden section ONLY if it has matches
+                                     section.style.display = '';
+                                 } else {
+                                     section.style.display = 'none'; // Keep hidden if no matches
+                                 }
+                            } else if (!hasVisibleItemsInSection && section.classList.contains('initial-visible')) {
+                                 section.style.display = 'none'; // Hide initially visible sections if they have no matches under filter
+                            } else {
+                                 section.style.display = 'none'; // Keep hidden section hidden if no matches
+                            }
+                        }
                     }
                 });
+
+                 // Optional: Add a message if no results found
+                const noResultsMessage = document.getElementById('no-results-message');
+                if (!hasVisibleItemsOverall && (searchText !== '' || yearValue !== 'all' || topicValue !== 'all')) {
+                    if (!noResultsMessage) {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.id = 'no-results-message';
+                        messageDiv.textContent = 'No publications match the current filter criteria.';
+                        messageDiv.style.textAlign = 'center';
+                        messageDiv.style.marginTop = '2rem';
+                        messageDiv.style.fontSize = '1.1rem';
+                        document.querySelector('.publications-list').appendChild(messageDiv);
+                    } else {
+                        noResultsMessage.style.display = '';
+                    }
+                } else if (noResultsMessage) {
+                    noResultsMessage.style.display = 'none';
+                }
             }
-            
+
             // Add event listeners
             searchInput.addEventListener('input', filterPublications);
             yearFilter.addEventListener('change', filterPublications);
             topicFilter.addEventListener('change', filterPublications);
+
+             // Initial filter call in case of pre-filled values (unlikely here, but good practice)
+            filterPublications();
+        });
+
+        // Basic Mobile Menu Toggle (Example)
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('nav ul.menu');
+
+            hamburger.addEventListener('click', function() {
+                // This just toggles display; a better implementation would use classes and transitions
+                if (menu.style.display === 'flex') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'flex';
+                    menu.style.flexDirection = 'column'; // Adjust for vertical layout
+                    menu.style.position = 'absolute'; // Example positioning
+                    menu.style.backgroundColor = '#f8f9fa';
+                    menu.style.width = '100%';
+                    menu.style.left = '0';
+                    menu.style.top = header.offsetHeight + 'px'; // Position below header
+                    menu.style.padding = '1rem 0';
+                    menu.querySelectorAll('li').forEach(li => li.style.marginLeft = '1rem');
+                }
+            });
         });
     </script>
+
 </body>
-</html> 
+</html>
