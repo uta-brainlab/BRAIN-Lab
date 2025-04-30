@@ -49,6 +49,77 @@
         .back-link:hover {
             text-decoration: underline;
         }
+        .publications {
+            margin-top: 2rem;
+        }
+        .publications h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .publication-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        /* Header and Navigation Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        nav .menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav .menu li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav .menu li a:hover,
+        nav .menu li a.active {
+            color: var(--primary-color);
+        }
+        nav .menu li a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -64,8 +135,14 @@
                     <li><a href="../team.html">Team</a></li>
                     <li><a href="../publications.html">Publications</a></li>
                     <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../grants.html">Grants</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -81,12 +158,23 @@
                     <p class="member-title">Research Assistant</p>
                     <div class="member-links">
                         <a href="mailto:chen.zhang@uta.edu"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://www.psychologytoday.com/us/therapists/chen-zhang-new-york-ny/975052" target="_blank"><i class="fas fa-external-link-alt"></i> Psychology Today Profile</a>
                     </div>
                 </div>
             </div>
 
             <div class="member-bio">
-                <p>Chen Zhang is a Research Assistant in the BRAIN Lab, contributing to various research projects in computational neuroscience and psychiatry.</p>
+                <p>Chen Zhang is a research assistant at the Brain Lab. She earned her undergraduate degree in Neuroscience and Psychology from the University of Toronto, and completed a Master's degree in Counseling for Mental Health and Wellness at New York University. </p> 
+                <p>Since 2020, she has been practicing as a licensed mental health counselor (LMHC) in the New York area. More information about her clinical practice can be found on Psychology Today. Drawing from her clinical experience, Chen has observed firsthand the challenges surrounding accurate diagnosis and its impact on treatment precision and outcomes. </p> 
+                <p>Her research interests center on understanding the biological basis of mental health disorders, with a particular focus on identifying neuroimaging biomarkers that can predict treatment response, improve diagnostic accuracy, and contribute to comprehensive assessment in psychiatric care.</p>
+            </div>
+
+            <div class="publications">
+                <h2>Recent Publications</h2>
+                <div class="publication-item">
+                    <p>Zhu, X., Zhang, C., Hellerstein, D., Feusner, J. D., Wheaton, M. G., Gomez, G. J., & Schneier, F. (2024). Single-dose psilocybin alters resting state functional networks in patients with body dysmorphic disorder. <em>Psychedelics, 1</em>(1), 25-31.</p>
+                    <a href="https://www.doi.org/10.61373/ppd24k/0028" target="_blank">https://www.doi.org/10.61373/ppd24k/0028</a>
+                </div>
             </div>
 
             <a href="../team.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Team</a>
@@ -102,7 +190,21 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
-                    <p>Email: xi.zhu@uta.edu</p>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
