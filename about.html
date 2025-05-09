@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRAIN Lab @ UTA - About</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Basic Styles */
@@ -18,13 +17,13 @@
         nav ul.menu li { margin-left: 1.5rem; }
         nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
         nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
-        .hamburger { display: none; cursor: pointer; } /* Add mobile menu JS if needed */
+        .hamburger { display: none; cursor: pointer; }
         .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
 
         /* Page Header */
         .page-header {
-            background-image: url('images/banner.png');
-            background-size: cover; /* Use cover for better responsiveness */
+            background-image: url('images/banner.png'); /* Ensure this image exists */
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             padding: 4rem 0;
@@ -33,7 +32,7 @@
             position: relative;
             background-color: #4682B4; /* Fallback color */
         }
-        .page-header::before { /* Optional overlay */
+        .page-header::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -43,8 +42,95 @@
         .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
         .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
         .page-header .container { position: relative; z-index: 2; }
+        .btn.primary-btn { /* Style for Lab Manual button if not in external CSS */
+            background-color: #0056b3; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: 600; display:inline-block;
+        }
+        .btn.primary-btn:hover { background-color: #004494; }
 
-        /* Footer (Consistent Styles) */
+
+        /* About Mission Section */
+        .about-mission { padding: 3rem 0; }
+        .about-content { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-family: 'Roboto', sans-serif; color: #0056b3; margin-bottom: 1rem; }
+        .about-text p { line-height: 1.7; margin-bottom: 1rem; }
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        .about-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+        /* Research Focus Section - Updated Styles */
+        .research-focus { padding: 3rem 0; }
+        .research-focus.light-bg { background-color: #f8f9fa; } 
+        .research-focus h2 { text-align: center; margin-bottom: 1.5rem; font-family: 'Roboto', sans-serif; color: #0056b3; font-size: 2rem; }
+        
+        .research-focus-content-wrapper {
+            background-color: #ffffff; 
+            padding: 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            max-width: 1000px; 
+            margin: 0 auto 2rem auto; 
+        }
+
+        .research-focus-grid-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; 
+            grid-template-rows: auto auto; 
+            gap: 20px; 
+            align-items: center; 
+        }
+
+        .focus-item-content { 
+            background: #fff;
+            padding: 1em 1.2em; 
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1.5px solid #e6e6e6;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .focus-item-content b { display: block; margin-bottom: 0.5em; font-size: 1.05rem; color: #0056b3;}
+        .focus-item-content ul {
+            margin: 0 0 0 1.2em; 
+            padding-left: 0; 
+            font-size: 0.9rem;
+            list-style-position: outside;
+            line-height: 1.5;
+        }
+         .focus-item-content ul li { margin-bottom: 0.3em;}
+
+        .focus-image-container {
+            grid-column: 2 / 3; 
+            grid-row: 1 / 3;    
+            display: flex;      
+            align-items: center;
+            justify-content: center;
+            padding: 10px; 
+        }
+        .focus-image-container img {
+            max-width: 280px; 
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .rf-top-left { grid-column: 1 / 2; grid-row: 1 / 2; text-align: right; }
+        .rf-bottom-left { grid-column: 1 / 2; grid-row: 2 / 3; text-align: right; }
+        .rf-top-right { grid-column: 3 / 4; grid-row: 1 / 2; text-align: left; }
+        .rf-bottom-right { grid-column: 3 / 4; grid-row: 2 / 3; text-align: left; }
+
+
+        /* Lab Approach Section */
+        .lab-approach { padding: 3rem 0; }
+        .lab-approach h2 { text-align: center; margin-bottom: 2rem; font-family: 'Roboto', sans-serif; color: #0056b3; }
+        .approach-content { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-around; }
+        .approach-item { background-color: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 350px; }
+        .approach-item h3 { color: #0056b3; margin-top: 0; margin-bottom: 1rem; }
+        .approach-item p { line-height: 1.6; }
+
+
+        /* Footer */
         footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
         .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
         .footer-col { flex: 1; min-width: 200px; }
@@ -59,11 +145,56 @@
         .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
 
         /* Responsive Adjustments */
+        @media (max-width: 992px) { 
+            .research-focus-content-wrapper {
+                padding: 1.5rem;
+            }
+            .research-focus-grid-container {
+                grid-template-columns: 1fr auto; 
+                grid-template-rows: auto auto auto auto; 
+                gap: 15px; 
+            }
+            .focus-image-container {
+                grid-column: 2 / 3; 
+                grid-row: 1 / 5;
+            }
+            .rf-top-left { grid-column: 1 / 2; grid-row: 1 / 2; text-align: left; margin-bottom:1rem;}
+            .rf-bottom-left { grid-column: 1 / 2; grid-row: 2 / 3; text-align: left; margin-bottom:1rem;}
+            .rf-top-right { grid-column: 1 / 2; grid-row: 3 / 4; text-align: left; margin-bottom:1rem;}
+            .rf-bottom-right { grid-column: 1 / 2; grid-row: 4 / 5; text-align: left; margin-bottom:1rem;}
+        }
+
         @media (max-width: 768px) {
-            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            nav ul.menu { display: none; }
             .hamburger { display: block; }
             .footer-content { flex-direction: column; }
             .page-header h1 { font-size: 2rem; }
+            .about-content { flex-direction: column; }
+            .about-image { order: -1; margin-bottom: 2rem; } 
+
+            .research-focus-content-wrapper {
+                padding: 1rem;
+                margin-left: 10px; 
+                margin-right: 10px;
+            }
+            .research-focus-grid-container {
+                grid-template-columns: 1fr; 
+                gap: 10px;
+            }
+             .focus-image-container {
+                grid-column: 1 / 2; 
+                grid-row: auto;    
+                order: 2; 
+                margin: 1rem 0;
+            }
+             .focus-image-container img { max-width: 220px; } 
+
+            .rf-top-left { grid-column: 1/2; grid-row: auto; order: 1; text-align: left !important; margin-bottom: 1rem;}
+            .rf-bottom-left { grid-column: 1/2; grid-row: auto; order: 3; text-align: left !important; margin-bottom: 1rem;}
+            .rf-top-right { grid-column: 1/2; grid-row: auto; order: 4; text-align: left !important; margin-bottom: 1rem;}
+            .rf-bottom-right { grid-column: 1/2; grid-row: auto; order: 5; text-align: left !important; margin-bottom: 1rem;}
+            
+            .approach-content { flex-direction: column; }
         }
     </style>
 </head>
@@ -133,48 +264,43 @@
         <section class="research-focus light-bg">
             <div class="container">
                 <h2>Research Focus</h2>
-                <div class="focus-grid">
-                    <div class="focus-card">
-                        <div class="focus-icon">
-                            <i class="fas fa-brain"></i>
+                <div class="research-focus-content-wrapper"> 
+                    <div class="research-focus-grid-container">
+                        <div class="focus-item-content rf-top-left">
+                            <b>🧠 Precision Brain Health</b>
+                            <ul>
+                                <li>Individualized Treatment Outcome Prediction</li>
+                                <li>Personalized early Diagnosis, and disease progression prediction</li>
+                                <li>Biotype Discovery & Subtyping</li>
+                            </ul>
                         </div>
-                        <h3>Computational Psychiatry</h3>
-                        <p>
-                            Developing computational models to better understand the neural basis of psychiatric disorders, 
-                            with a particular focus on psychosis, schizophrenia, and mood disorders.
-                        </p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-icon">
-                            <i class="fas fa-network-wired"></i>
+                        <div class="focus-item-content rf-bottom-left">
+                            <b>🤖 AI & Deep Learning Frameworks</b>
+                            <ul>
+                                <li>Development of AI and multimodal deep learning models (e.g., VAE, explainable AI)</li>
+                                <li>Integrating imaging, digital phenotypes, genetics, and clinical data</li>
+                            </ul>
                         </div>
-                        <h3>Neural Circuit Modeling</h3>
-                        <p>
-                            Investigating how neural circuits give rise to cognitive functions and how disruptions 
-                            in these circuits contribute to psychiatric symptoms.
-                        </p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-icon">
-                            <i class="fas fa-chart-bar"></i>
+                        <div class="focus-image-container">
+                            <img src="images/research focus.png" alt="AI in Brain Health">
                         </div>
-                        <h3>Neuroimaging Analysis</h3>
-                        <p>
-                            Creating advanced methods for analyzing fMRI, EEG, and other neuroimaging data to extract 
-                            meaningful patterns and biomarkers of brain function and dysfunction.
-                        </p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-icon">
-                            <i class="fas fa-robot"></i>
+                        <div class="focus-item-content rf-top-right">
+                            <b>🧑‍🔬 Design MRI Experiments</b>
+                            <ul>
+                                <li>Design and implementation of extinction, fear learning, cognitive tasks, eye-tracking, and brain circuits</li>
+                                <li>Various imaging modalities and pipeline</li>
+                                <li>Multimodal imaging integration</li>
+                            </ul>
                         </div>
-                        <h3>Machine Learning in Psychiatry</h3>
-                        <p>
-                            Applying machine learning and deep learning approaches to identify novel patterns in 
-                            clinical and neuroimaging data that can inform diagnosis and treatment.
-                        </p>
+                        <div class="focus-item-content rf-bottom-right">
+                            <b>🧬 Brain Biomarkers</b>
+                            <ul>
+                                <li>Identifying structural and functional brain biomarkers (fMRI, DTI, etc.)</li>
+                                <li>Focus on psychiatric (PTSD, MDD, OCD) and neurodevelopmental disorders</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </section>
 
@@ -241,6 +367,5 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
-</html> 
+    <script src="js/script.js"></script> </body>
+</html>
