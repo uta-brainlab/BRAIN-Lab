@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN Lab @ UTA - Past Grants</title>
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+        .page-header {
+            background-image: url('images/banner.png'); /* Ensure this image exists */
+            background-size: cover; /* Changed for better responsiveness */
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            background-color: #4682B4; /* Fallback color */
+        }
+        .page-header::before { /* Optional overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
+        .page-header .container { position: relative; z-index: 2; }
+        .past-grants-section { padding: 3rem 0; }
+        .past-grants-section h2 { font-family: 'Roboto', sans-serif; font-size: 2rem; color: #0056b3; margin-bottom: 2rem; text-align: center; }
+        .past-grants-list { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); padding: 2rem; }
+        .past-grant-item { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        .past-grant-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .past-grant-title { font-size: 1.1rem; font-weight: 600; color: #0056b3; margin-bottom: 0.5rem; }
+        .past-grant-details { font-size: 0.95rem; color: #333; margin-bottom: 0.3rem; line-height: 1.6; }
+        .past-grant-details strong { color: #111; }
+        .past-grant-role { font-style: italic; color: #555; margin-top: 0.5rem; }
+        .past-grant-role strong { color: #111; }
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">BRAIN Lab @ UTA</a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="grants.html" class="active">Grants</a></li> <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Past Grants Summary</h1>
+                <p>Completed research projects and previous funding that have contributed to the BRAIN Lab's mission.</p>
+            </div>
+        </section>
+        <section class="past-grants-section">
+            <div class="container">
+                <h2>Past Grants</h2>
+                <div class="past-grants-list">
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Identification of Distinct Multimodal Biotypes of PTSD Using Data Drive Approach: A Multisite Big Data Study</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> 1K01MH122774-01</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIMH | <strong>Period:</strong> 12/10/2020-12/09/2024</div>
+                        <div class="past-grant-details">The goal of this project is to utilize a data-driven computational approach and machine learning techniques to identify multimodal neural biomarkers of PTSD and multimodal biotypes of PTSD.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Zhu | <strong>Lab Role:</strong> PI</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Towards Precision Diagnosis for PTSD Using Multimodal MRI: A multisite "Big Data" Study</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> NARSAD Young Investigator Grant</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NARSAD (Brain & Behavior Research Foundation) | <strong>Period:</strong> 1/14/2019-7/14/2021</div>
+                        <div class="past-grant-details">The goal of this Research Project Grant is to utilize multimodal brain features, including structural MRI, resting state functional MRI (rs-fMRI) and diffusion tensor imaging (DTI), and machine-learning, to diagnostically differentiate patients with PTSD from trauma-exposed healthy controls.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Zhu | <strong>Lab Role:</strong> PI</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Advancing PTSD research using novel multimodal MRI and machine learning</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> Irving Imaging Pilot Award</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> Irving Institute for Clinical and Translational Research | <strong>Period:</strong> 5/1/2017-5/1/2018</div>
+                        <div class="past-grant-details">The goal of this project is to advance PTSD research by using novel multimodal MRI, and machine learning methods, aiming to identify a neural signature of PTSD, and to examine its utility in predicting diagnosis, functional impairment, and symptom severity.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Zhu | <strong>Lab Role:</strong> PI</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Statistical method for neural mechanism mediating and moderating cognitive system in Alzheimer's disease and aging research.</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> R01 AG062578</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIA | <strong>Period:</strong> 10/01/2019-10/1/2024</div>
+                        <div class="past-grant-details">This project focuses on developing statistical methods to understand neural mechanisms in Alzheimer's disease and aging.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Lee | <strong>Lab Role:</strong> Data analyst (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">A Phase 3 clinical trial on transcendental meditation and Posttraumatic Stress Disorder, suicide, and substance use in veterans</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> David Lynch Foundation Grant</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> David Lynch Foundation | <strong>Period:</strong> 7/1/2022-12/1/2024</div>
+                        <div class="past-grant-details">This clinical trial investigates the effects of transcendental meditation on PTSD, suicide, and substance use in veterans.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Neria | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Neural, behavioral, and endocrine correlates of trauma among women.</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> Binational Science Foundation Grant</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> Binational Science Foundation | <strong>Period:</strong> 2020-2024</div>
+                        <div class="past-grant-details">The goal of this project is to bridge existing gaps in understanding of behavioral, neural and endocrine mechanisms linking traumatic events to the development of PTSD in women.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Helpman | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Cognitive and neural Mechanisms of Accelerating Aging in PTSD</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> R01 MH111596-01</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIMH | <strong>Period:</strong> 9/1/2016-8/31/2021</div>
+                        <div class="past-grant-details">The goal of this R01 Research Project Grant is to understand the biological mechanisms leading to increased rates of aging-associated medical diseases, cognitive decline, and frailty characteristics in older adults with Post Traumatic Stress Disorder (PTSD).</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Rutherford | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</div>
+                    </div>
+                    
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Cognitive and neural Mechanisms of Accelerating Aging in PTSD (Administrative Supplement)</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> R01 MH111596-01, Admin Supplement</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIMH | <strong>Period:</strong> 8/1/2019-7/30/2022</div>
+                        <div class="past-grant-details">This administrative supplement supports ongoing research to understand the biological mechanisms of accelerated aging in older adults with PTSD.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Rutherford | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Neural Signature of Fear Overgeneralization in Trauma Exposed Adults</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> R01MH105355-01A1</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIMH | <strong>Period:</strong> 7/1/2015-6/30/2019</div>
+                        <div class="past-grant-details">The goal of this R01 Research Project Grant is to use fMRI and machine learning analysis among trauma exposed adults and matched controls in order to characterize the neural signature of fear overgeneralization across diagnostic boundaries.</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Neria | <strong>Lab Role:</strong> Co-Investigator (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Attention bias modification treatments in SAD</div>
+                        <div class="past-grant-details"><strong>Grant Number:</strong> R61/R33 MH116089</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> NIMH | <strong>Period:</strong> 7/1/2018-7/1/2023</div>
+                        <div class="past-grant-details">The present study is an open trial that seeks to examine the feasibility, acceptability, mechanism, and efficacy of a recently developed computer-based therapy in individuals with social anxiety disorder (SAD).</div>
+                        <div class="past-grant-role"><strong>PI:</strong> Dr. Schneier | <strong>Lab Role:</strong> FMRI analyst and data manager (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Trauma Modified Equine Assisted PTSD treatment</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> Mack Foundation Grant</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> Mack Foundation | <strong>Period:</strong> 1/1/2015-12/31/2019</div>
+                        <div class="past-grant-details">The goal of present study is to test the safety, acceptability and efficacy of a trauma modified equine assisted treatment for war veterans.</div>
+                        <div class="past-grant-role"><strong>PI(s):</strong> Dr. Fisher, Dr. Neria | <strong>Lab Role:</strong> Data Analyst (Dr. Zhu)</div>
+                    </div>
+
+                    <div class="past-grant-item">
+                        <div class="past-grant-title">Training Program for a Proven Curriculum for Equine-Assisted Therapy for Veterans with PTSD Symptoms</div>
+                        <div class="past-grant-details"><strong>Grant Identifier:</strong> Bob Woodroff Foundation Grant</div>
+                        <div class="past-grant-details"><strong>Funding Agency:</strong> Bob Woodroff Foundation | <strong>Period:</strong> 9/24/2019 - 9/23/2020</div>
+                        <div class="past-grant-details">This project focuses on a training program for equine-assisted therapy for veterans with PTSD.</div>
+                        <div class="past-grant-role"><strong>PI(s):</strong> Dr. Fisher, Dr. Neria | <strong>Lab Role:</strong> Data Analyst (Dr. Zhu)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BRAIN Lab @ UTA</h3>
+                    <p>Biomedical Research in AI and Neuroimaging Lab<br>University of Texas at Arlington</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 BRAIN Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script> </body>
+</html>

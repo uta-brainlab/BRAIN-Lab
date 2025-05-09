@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN Lab @ UTA - Pending Grants</title>
+    <link rel="stylesheet" href="css/styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background-color: #f8f9fa; padding: 1rem 0; border-bottom: 1px solid #e7e7e7; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0056b3; text-decoration: none; }
+        nav ul.menu { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul.menu li { margin-left: 1.5rem; }
+        nav ul.menu li a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s ease; }
+        nav ul.menu li a:hover, nav ul.menu li a.active { color: #0056b3; }
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: #333; }
+        .page-header {
+            background-image: url('images/banner.png'); /* Ensure this image exists */
+            background-size: cover; /* Changed for better responsiveness */
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            background-color: #4682B4; /* Fallback color */
+        }
+        .page-header::before { /* Optional overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .page-header h1 { font-family: 'Roboto', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .page-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: rgba(255, 255, 255, 0.9); }
+        .page-header .container { position: relative; z-index: 2; }
+        .pending-grants-section { padding: 3rem 0; }
+        .pending-grants-section h2 { font-family: 'Roboto', sans-serif; font-size: 2rem; color: #0056b3; margin-bottom: 2rem; text-align: center; }
+        .pending-grants-list { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); padding: 2rem; }
+        .pending-grant-item { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        .pending-grant-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .pending-grant-title { font-size: 1.1rem; font-weight: 600; color: #0056b3; margin-bottom: 0.5rem; }
+        .pending-grant-details { font-size: 0.95rem; color: #333; margin-bottom: 0.3rem; line-height: 1.6; }
+        .pending-grant-details strong { color: #111; }
+        .pending-grant-role { font-style: italic; color: #555; margin-top: 0.5rem; }
+        .pending-grant-role strong { color: #111; }
+        footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;}
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 1rem; color: #f8f9fa; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; color: #adb5bd; line-height: 1.6; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: white; }
+        .social-icons a { color: #adb5bd; margin-right: 1rem; font-size: 1.3rem; transition: color 0.3s ease; }
+        .social-icons a:hover { color: white; }
+        .copyright { text-align: center; border-top: 1px solid #495057; padding-top: 1rem; font-size: 0.9rem; color: #adb5bd; }
+        @media (max-width: 768px) {
+            nav ul.menu { display: none; /* Basic setup for mobile */ }
+            .hamburger { display: block; }
+            .footer-content { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">BRAIN Lab @ UTA</a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="grants.html" class="active">Grants</a></li> <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Pending Grants Summary</h1>
+                <p>Grant applications currently under review or awaiting funding decisions for the BRAIN Lab.</p>
+            </div>
+        </section>
+        <section class="pending-grants-section">
+            <div class="container">
+                <h2>Pending Grants</h2>
+                <div class="pending-grants-list">
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Investigating neural correlates of apathy in transdiagnostic Alzheimer's Disease and Related Dementias</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 MH | <strong>Funding Agency:</strong> NIH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in Feb 2024. Proposed period: 07/01/2024-06/20/2029.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Lee, Goldberg | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Enigma-ADHD: A Worldwide Neuroimaging Study Of Brain Trajectories And Clinical Outcomes In ADHD</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 MH | <strong>Funding Agency:</strong> NIMH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in June 2024. Proposed period: 04/01/2025-03/31/2030.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Thompson | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Novel Group ICA Incorporating Time-Frequency Information for Longitudinal Brain Network Analysis</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R21 | <strong>Funding Agency:</strong> NIH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in June 2024. Proposed period: 06/01/2025-06/31/2027.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Lee | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Statistical method for neural mechanism mediating and moderating cognitive system in Alzheimer's disease and aging research</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 | <strong>Funding Agency:</strong> NIA</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in July 2024. Proposed period: 04/01/2025-03/31/2027.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Lee | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">The Enigma-binge Eating Initiative: A Global Neuroimaging Study Of Markers And Risk Factors</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 | <strong>Funding Agency:</strong> NIH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in Oct 2024. Proposed period: 07/01/2025-06/30/2030.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Berner | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Reverse Engineering for Robust MDD Biomarkers: Unveiling Novel Neural Biotypes for Digital Phenotypes</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 | <strong>Funding Agency:</strong> NIMH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Submitted in Oct 2024. Proposed period: 07/01/2025-06/30/2030.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Dr. Zhu | <strong>Lab Role (Dr. Zhu):</strong> Contact-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Novel methods for understanding neural underpinnings of comorbidity in pediatric psychopathology</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 MH134970 | <strong>Funding Agency:</strong> NIMH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Scored 30th percentile in June 2024, resubmit in Nov 2024. Proposed period: 07/01/2025-06/30/2030.</div>
+                        <div class="pending-grant-role"><strong>MPI(s):</strong> Dr. Zhu, Lee | <strong>Lab Role (Dr. Zhu):</strong> MPI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Emotional conflict and decision-making: Using virtual reality to elucidate the neural correlates of human approach-avoidance behavior</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R21 | <strong>Funding Agency:</strong> NIMH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Pending. Proposed period: 06/01/2025-06/31/2027.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Suarez-Jimenez | <strong>Lab Role (Dr. Zhu):</strong> Site-PI</div>
+                    </div>
+
+                    <div class="pending-grant-item">
+                        <div class="pending-grant-title">Longitudinal associations and underlying mechanisms between binge-eating disorder and obesity across adolescence</div>
+                        <div class="pending-grant-details"><strong>Identifier:</strong> R01 MH | <strong>Funding Agency:</strong> NIH</div>
+                        <div class="pending-grant-details"><strong>Status:</strong> Pending. Proposed period: 06/01/2025-06/31/2027.</div>
+                        <div class="pending-grant-role"><strong>PI(s):</strong> Shan | <strong>Lab Role (Dr. Zhu):</strong> Consultant</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BRAIN Lab @ UTA</h3>
+                    <p>Biomedical Research in AI and Neuroimaging Lab<br>University of Texas at Arlington</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 BRAIN Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script> </body>
+</html>
