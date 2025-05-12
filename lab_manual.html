@@ -53,6 +53,46 @@
             color: #555;
             margin-bottom: 2.5rem;
         }
+        .manual-layout {
+            display: flex;
+            gap: 2rem;
+        }
+        .manual-index {
+            min-width: 220px;
+            max-width: 260px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 1.5rem 1rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .manual-index h4 {
+            font-size: 1.1rem;
+            color: #0056b3;
+            margin-bottom: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .manual-index ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .manual-index li {
+            margin-bottom: 0.7em;
+        }
+        .manual-index a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .manual-index a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
         .manual-content { 
             max-width: 900px; 
             margin: 0 auto; 
@@ -128,6 +168,10 @@
             .manual-content h3 { font-size: 1.6rem; }
             .manual-content h4 { font-size: 1.3rem; }
         }
+        @media (max-width: 900px) {
+            .manual-layout { flex-direction: column; }
+            .manual-index { position: static; width: 100%; max-width: 100%; margin-bottom: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -165,257 +209,270 @@
             <div class="container">
                 <h2>BRAIN Lab Manual</h2>
                 <p class="manual-subtitle">Xi Zhu, PhD<br>April 25th, 2025</p>
-                <div class="manual-content">
-                    <h3>Chapter 1: Welcome</h3>
-                    <p>Welcome to the BRAIN Laboratory at the University of Texas at Arlington, directed by Xi Zhu.</p>
-                    <p>If you are new to the lab, your first job is to read through this manual. This lab manual is an introduction to how we do work and science in the BRAIN lab. The material you find here describes some overarching lab policies, the lab structure, and how to get started. It is also a living document and the manual itself is an introduction to some of the tools you will use when working in the lab.</p>
-                    <p>Our lab manual is heavily borrowed from Steven M. Weisberg, PhD: <a href="https://scann-lab.github.io/Lab_Manual/index.html" target="_blank" rel="noopener noreferrer">https://scann-lab.github.io/Lab_Manual/index.html</a></p>
+                <div class="manual-layout">
+                    <nav class="manual-index">
+                        <h4>Chapters</h4>
+                        <ul>
+                            <li><a href="#chapter1">Chapter 1: Welcome</a></li>
+                            <li><a href="#chapter2">Chapter 2: Personnel Expectations</a></li>
+                            <li><a href="#chapter3">Chapter 3: Doing Science in the BRAIN Lab</a></li>
+                            <li><a href="#chapter4">Chapter 4: Authorship</a></li>
+                            <li><a href="#chapter5">Chapter 5: Communication</a></li>
+                            <li><a href="#chapter6">Chapter 6: Working in the lab</a></li>
+                        </ul>
+                    </nav>
+                    <div class="manual-content">
+                        <h3 id="chapter1">Chapter 1: Welcome</h3>
+                        <p>Welcome to the BRAIN Laboratory at the University of Texas at Arlington, directed by Xi Zhu.</p>
+                        <p>If you are new to the lab, your first job is to read through this manual. This lab manual is an introduction to how we do work and science in the BRAIN lab. The material you find here describes some overarching lab policies, the lab structure, and how to get started. It is also a living document and the manual itself is an introduction to some of the tools you will use when working in the lab.</p>
+                        <p>Our lab manual is heavily borrowed from Steven M. Weisberg, PhD: <a href="https://scann-lab.github.io/Lab_Manual/index.html" target="_blank" rel="noopener noreferrer">https://scann-lab.github.io/Lab_Manual/index.html</a></p>
 
-                    <h3>Chapter 2: Personnel Expectations</h3>
-                    <h4>2.1 PI</h4>
-                    <p>As Principal Investigator, I am committed to fostering a productive, inclusive, and forward-thinking research environment. My responsibilities include the following:</p>
-                    <h5>Funding, Resources, and Infrastructure:</h5>
-                    <p>The top priority of my work is to ensure the lab has the necessary physical, computational, and financial resources through grants and partnerships to support your research. This includes maintaining lab members' salary, research equipment, managing lab finances responsibly, providing opportunities and funding support for conference presentations and advocating for your access to institutional and external opportunities.</p>
-                    <h5>Lab Vision and Direction:</h5>
-                    <p>I am responsible for shaping the lab's overall vision, research priorities, and scientific direction. This includes identifying innovative project opportunities, and ensuring our work contributes meaningfully to the fields of bioengineering, neuroimaging, psychology and AI.</p>
-                    <h5>Research Output and Scientific Integrity:</h5>
-                    <p>I am ultimately accountable for the lab's research products and ensuring they meet the highest standards of scientific rigor and integrity. On a day-to-day basis, this includes:</p>
-                    <ul>
-                        <li>Providing feedback on manuscripts, grants, posters, talks, and code</li>
-                        <li>Helping experimental design and implementation</li>
-                        <li>Help developing and maintaining lab infrastructure (e.g., data storage, analysis pipelines, software tools)</li>
-                        <li>Facilitating collaboration and interdisciplinary integration across fields like AI, neuroimaging, and biomedical data science.</li>
-                    </ul>
-                    <h5>Professional Development and Mentorship:</h5>
-                    <p>I am committed to supporting the academic and career development of all lab members. This includes providing individualized mentorship, offering guidance on diverse career paths—including academia, industry, clinical practice, and entrepreneurship—and facilitating opportunities for networking, leadership, and authorship. Open and ongoing communication about your goals, interests, and needs will enable me to tailor my support and help you make meaningful progress toward your objectives.</p>
-                    <h5>Education and Training:</h5>
-                    <p>I will support your foundational and advanced interdisciplinary training in bioengineering, neuroscience, psychology, machine learning, and related disciplines. This includes providing guidance on developing research ideas, designing experiments, building and maintaining data analysis pipelines, utilizing appropriate computational tools, and adhering to responsible and ethical research practices.</p>
-                    <h5>Fostering a Safe and Inclusive Environment:</h5>
-                    <p>I am responsible for promoting a safe, respectful, and supportive lab culture. I will support your physical and mental well-being, work-life balance, and ensure that everyone in the lab adheres to best practices in ethical conduct, diversity, and inclusion.</p>
-                    <h5>Accountability and Lab Operations:</h5>
-                    <p>I oversee compliance with institutional, ethical, and data security regulations (e.g., IRB, IACUC, HIPAA, data sharing). I also coordinate lab meetings, project timelines, authorship guidelines, and collaborative decision-making processes.</p>
+                        <h3 id="chapter2">Chapter 2: Personnel Expectations</h3>
+                        <h4>2.1 PI</h4>
+                        <p>As Principal Investigator, I am committed to fostering a productive, inclusive, and forward-thinking research environment. My responsibilities include the following:</p>
+                        <h5>Funding, Resources, and Infrastructure:</h5>
+                        <p>The top priority of my work is to ensure the lab has the necessary physical, computational, and financial resources through grants and partnerships to support your research. This includes maintaining lab members' salary, research equipment, managing lab finances responsibly, providing opportunities and funding support for conference presentations and advocating for your access to institutional and external opportunities.</p>
+                        <h5>Lab Vision and Direction:</h5>
+                        <p>I am responsible for shaping the lab's overall vision, research priorities, and scientific direction. This includes identifying innovative project opportunities, and ensuring our work contributes meaningfully to the fields of bioengineering, neuroimaging, psychology and AI.</p>
+                        <h5>Research Output and Scientific Integrity:</h5>
+                        <p>I am ultimately accountable for the lab's research products and ensuring they meet the highest standards of scientific rigor and integrity. On a day-to-day basis, this includes:</p>
+                        <ul>
+                            <li>Providing feedback on manuscripts, grants, posters, talks, and code</li>
+                            <li>Helping experimental design and implementation</li>
+                            <li>Help developing and maintaining lab infrastructure (e.g., data storage, analysis pipelines, software tools)</li>
+                            <li>Facilitating collaboration and interdisciplinary integration across fields like AI, neuroimaging, and biomedical data science.</li>
+                        </ul>
+                        <h5>Professional Development and Mentorship:</h5>
+                        <p>I am committed to supporting the academic and career development of all lab members. This includes providing individualized mentorship, offering guidance on diverse career paths—including academia, industry, clinical practice, and entrepreneurship—and facilitating opportunities for networking, leadership, and authorship. Open and ongoing communication about your goals, interests, and needs will enable me to tailor my support and help you make meaningful progress toward your objectives.</p>
+                        <h5>Education and Training:</h5>
+                        <p>I will support your foundational and advanced interdisciplinary training in bioengineering, neuroscience, psychology, machine learning, and related disciplines. This includes providing guidance on developing research ideas, designing experiments, building and maintaining data analysis pipelines, utilizing appropriate computational tools, and adhering to responsible and ethical research practices.</p>
+                        <h5>Fostering a Safe and Inclusive Environment:</h5>
+                        <p>I am responsible for promoting a safe, respectful, and supportive lab culture. I will support your physical and mental well-being, work-life balance, and ensure that everyone in the lab adheres to best practices in ethical conduct, diversity, and inclusion.</p>
+                        <h5>Accountability and Lab Operations:</h5>
+                        <p>I oversee compliance with institutional, ethical, and data security regulations (e.g., IRB, IACUC, HIPAA, data sharing). I also coordinate lab meetings, project timelines, authorship guidelines, and collaborative decision-making processes.</p>
 
-                    <h4>2.2 Postdocs</h4>
-                    <p>As a postdoctoral researcher in the BRAIN Lab, you are expected to take an active and collaborative role in advancing the lab's scientific goals while developing your own research identity.</p>
-                    <h5>Pursue Independent and Collaborative Research:</h5>
-                    <p>Develop and lead high-impact research projects aligned with the lab's mission, while also contributing to collaborative efforts across the lab and with external partners. You are encouraged to develop your own scientific niche and prepare for future independence, whether in academia, industry, or other career paths.</p>
-                    <h5>Develop Scientific Writing Skills:</h5>
-                    <p>Take initiative in preparing manuscripts for peer-reviewed publication and actively contribute to writing manuscripts. You are expected to participate in the full scientific process—from conceptualizing research questions and conducting data analysis to drafting manuscripts, responding to reviewer feedback, and presenting findings at national and international conferences.</p>
-                    <h5>Grants and fellowship applications:</h5>
-                    <p>Applying for grants and fellowships is an essential part of developing as an independent scientist. Postdoctoral researchers are encouraged to actively pursue external funding opportunities to support their research and advance their career development. I will work with you to identify the most appropriate mechanisms and help you build strong, competitive proposals. This includes:</p>
-                    <ul>
-                        <li>Identifying relevant fellowships, career development awards, and foundation grants (e.g., NIH K awards, NSF, NARSAD, institutional fellowships)</li>
-                        <li>Contributing to the development of lab collaborative grants, including preliminary data, methods, or literature reviews, grant writing.</li>
-                        <li>Preparing and submitting individual applications, with mentorship and feedback provided throughout the process.</li>
-                        <li>Gaining experience with budget preparation, biosketches, and grant-specific documents (e.g., training plans, research aims, letters of support)</li>
-                        <li>Learning the structure and expectations of major funding agencies (NIH, NSF, DoD, foundations, etc.)</li>
-                        <li>Participating in mock reviews and group feedback sessions where applicable.</li>
-                    </ul>
-                    <h5>Advance Scientific Expertise:</h5>
-                    <p>Deepen your interdisciplinary knowledge in bioengineering, neuroscience, psychology, and AI/machine learning. You are expected to take initiative in learning new techniques, refining experimental and analytical methods, and staying current with relevant literature.</p>
-                    <h5>Mentor Junior Lab Members:</h5>
-                    <p>Act as a mentor and role model for graduate and undergraduate students. This includes helping them troubleshoot experiments or analyses, reviewing their work, modeling responsible conduct of research, and supporting their professional development.</p>
-                    <h5>Engage in Career Development:</h5>
-                    <p>Take ownership of your career trajectory by actively seeking mentorship, networking opportunities, and professional development. I will support you in identifying and applying for fellowships, positions, and leadership opportunities.</p>
-                    <h5>Model Integrity and Inclusivity:</h5>
-                    <p>Uphold the highest standards of scientific integrity, transparency, and reproducibility. Foster a collaborative, respectful, and inclusive lab environment, and contribute to maintaining a healthy and supportive research culture.</p>
+                        <h4>2.2 Postdocs</h4>
+                        <p>As a postdoctoral researcher in the BRAIN Lab, you are expected to take an active and collaborative role in advancing the lab's scientific goals while developing your own research identity.</p>
+                        <h5>Pursue Independent and Collaborative Research:</h5>
+                        <p>Develop and lead high-impact research projects aligned with the lab's mission, while also contributing to collaborative efforts across the lab and with external partners. You are encouraged to develop your own scientific niche and prepare for future independence, whether in academia, industry, or other career paths.</p>
+                        <h5>Develop Scientific Writing Skills:</h5>
+                        <p>Take initiative in preparing manuscripts for peer-reviewed publication and actively contribute to writing manuscripts. You are expected to participate in the full scientific process—from conceptualizing research questions and conducting data analysis to drafting manuscripts, responding to reviewer feedback, and presenting findings at national and international conferences.</p>
+                        <h5>Grants and fellowship applications:</h5>
+                        <p>Applying for grants and fellowships is an essential part of developing as an independent scientist. Postdoctoral researchers are encouraged to actively pursue external funding opportunities to support their research and advance their career development. I will work with you to identify the most appropriate mechanisms and help you build strong, competitive proposals. This includes:</p>
+                        <ul>
+                            <li>Identifying relevant fellowships, career development awards, and foundation grants (e.g., NIH K awards, NSF, NARSAD, institutional fellowships)</li>
+                            <li>Contributing to the development of lab collaborative grants, including preliminary data, methods, or literature reviews, grant writing.</li>
+                            <li>Preparing and submitting individual applications, with mentorship and feedback provided throughout the process.</li>
+                            <li>Gaining experience with budget preparation, biosketches, and grant-specific documents (e.g., training plans, research aims, letters of support)</li>
+                            <li>Learning the structure and expectations of major funding agencies (NIH, NSF, DoD, foundations, etc.)</li>
+                            <li>Participating in mock reviews and group feedback sessions where applicable.</li>
+                        </ul>
+                        <h5>Advance Scientific Expertise:</h5>
+                        <p>Deepen your interdisciplinary knowledge in bioengineering, neuroscience, psychology, and AI/machine learning. You are expected to take initiative in learning new techniques, refining experimental and analytical methods, and staying current with relevant literature.</p>
+                        <h5>Mentor Junior Lab Members:</h5>
+                        <p>Act as a mentor and role model for graduate and undergraduate students. This includes helping them troubleshoot experiments or analyses, reviewing their work, modeling responsible conduct of research, and supporting their professional development.</p>
+                        <h5>Engage in Career Development:</h5>
+                        <p>Take ownership of your career trajectory by actively seeking mentorship, networking opportunities, and professional development. I will support you in identifying and applying for fellowships, positions, and leadership opportunities.</p>
+                        <h5>Model Integrity and Inclusivity:</h5>
+                        <p>Uphold the highest standards of scientific integrity, transparency, and reproducibility. Foster a collaborative, respectful, and inclusive lab environment, and contribute to maintaining a healthy and supportive research culture.</p>
 
-                    <h4>2.3 Research Staffs (Data Scientist, Research Scientist):</h4>
-                    <p>As a Research Staff member in the BRAIN Lab, your role is central to the lab's technical infrastructure, research innovation, and overall scientific productivity. You are expected to lead the development and maintenance of high-quality, reproducible codebases, while also contributing intellectually to the design, execution, and dissemination of research.</p>
-                    <p>Your responsibilities closely align with those of postdoctoral researchers, including leadership on projects, manuscript preparation, and mentorship of junior lab members. The key distinction is that your career development efforts may focus more on applying to competitive fellowships, doctoral programs, other advanced training, or startup funding opportunities.</p>
-                    <h5>Contribute to Lab Infrastructure:</h5>
-                    <p>Help maintain lab resources such as data analysis pipelines, code repositories (e.g. github), experimental protocols, and computing systems.</p>
+                        <h4>2.3 Research Staffs (Data Scientist, Research Scientist):</h4>
+                        <p>As a Research Staff member in the BRAIN Lab, your role is central to the lab's technical infrastructure, research innovation, and overall scientific productivity. You are expected to lead the development and maintenance of high-quality, reproducible codebases, while also contributing intellectually to the design, execution, and dissemination of research.</p>
+                        <p>Your responsibilities closely align with those of postdoctoral researchers, including leadership on projects, manuscript preparation, and mentorship of junior lab members. The key distinction is that your career development efforts may focus more on applying to competitive fellowships, doctoral programs, other advanced training, or startup funding opportunities.</p>
+                        <h5>Contribute to Lab Infrastructure:</h5>
+                        <p>Help maintain lab resources such as data analysis pipelines, code repositories (e.g. github), experimental protocols, and computing systems.</p>
 
-                    <h4>2.4 Post MA degree Research Assistant, Research Coordinator:</h4>
-                    <p>The research assistant and research coordinator will have a regular schedule to ensure a stability in the lab. Eight hours per day is expected, and these hours should occur roughly between 8am and 6pm. Time off requests can be somewhat informal but should be submitted to the PI in writing, so we have a record of such things. Volunteer RAs are expected to work 20 hours/ week. The RAs will work closely with investigators, postdoctoral fellows, and other research staff to contribute to the data processing, statistical analysis, interpretation of large-scale neuroimaging and behavioral datasets, and writing manuscripts.</p>
-                    <h5>Lab Collaboration & Communication:</h5>
-                    <ul>
-                        <li>Organize lab meetings, journal clubs, and collaborative discussions with faculty and other team members.</li>
-                        <li>Provide technical and analytical support to other lab members, including students and trainees.</li>
-                        <li>Maintain compliance with IRB, data privacy, and data sharing protocols.</li>
-                        <li>Update the lab website.</li>
-                    </ul>
-                    <h5>Data Management & Preprocessing:</h5>
-                    <ul>
-                        <li>Assist with the acquisition, organization, and storage of structural and functional neuroimaging datasets (e.g., fMRI, DTI, sMRI), and clinical datasets.</li>
-                        <li>Perform preprocessing using standard neuroimaging pipelines (e.g., fMRIPrep, FreeSurfer, CONN).</li>
-                        <li>Maintain and document BIDS-compliant data structures and quality control reports.</li>
-                        <li>Documenting data storage and backups for both public datasets (such as ABCD), and local clinical trials, data processing log.</li>
-                        <li>Develop and maintain documentation, including Lab experimental protocols, fMRI pipelines and data analysis protocols.</li>
-                    </ul>
-                    <h5>Contribute to their own research project:</h5>
-                    <p>RAs will have the opportunity to work on their own research projects.</p>
+                        <h4>2.4 Post MA degree Research Assistant, Research Coordinator:</h4>
+                        <p>The research assistant and research coordinator will have a regular schedule to ensure a stability in the lab. Eight hours per day is expected, and these hours should occur roughly between 8am and 6pm. Time off requests can be somewhat informal but should be submitted to the PI in writing, so we have a record of such things. Volunteer RAs are expected to work 20 hours/ week. The RAs will work closely with investigators, postdoctoral fellows, and other research staff to contribute to the data processing, statistical analysis, interpretation of large-scale neuroimaging and behavioral datasets, and writing manuscripts.</p>
+                        <h5>Lab Collaboration & Communication:</h5>
+                        <ul>
+                            <li>Organize lab meetings, journal clubs, and collaborative discussions with faculty and other team members.</li>
+                            <li>Provide technical and analytical support to other lab members, including students and trainees.</li>
+                            <li>Maintain compliance with IRB, data privacy, and data sharing protocols.</li>
+                            <li>Update the lab website.</li>
+                        </ul>
+                        <h5>Data Management & Preprocessing:</h5>
+                        <ul>
+                            <li>Assist with the acquisition, organization, and storage of structural and functional neuroimaging datasets (e.g., fMRI, DTI, sMRI), and clinical datasets.</li>
+                            <li>Perform preprocessing using standard neuroimaging pipelines (e.g., fMRIPrep, FreeSurfer, CONN).</li>
+                            <li>Maintain and document BIDS-compliant data structures and quality control reports.</li>
+                            <li>Documenting data storage and backups for both public datasets (such as ABCD), and local clinical trials, data processing log.</li>
+                            <li>Develop and maintain documentation, including Lab experimental protocols, fMRI pipelines and data analysis protocols.</li>
+                        </ul>
+                        <h5>Contribute to their own research project:</h5>
+                        <p>RAs will have the opportunity to work on their own research projects.</p>
 
-                    <h4>2.5 PhD Students</h4>
-                    <p>In general PhD students have a fairly loose leash as long as they are making progress on projects. In practice, this likely means there will be crunch times where you're working hard to get things done, and lighter times when you can take it easy.</p>
-                    <p>PhD students are expected to:</p>
-                    <ul>
-                        <li>Develop and manage an independent project.</li>
-                        <li>Know the literature and learn the skills related to their project.</li>
-                        <li>Have a strong grasp of bioengineering; a breadth of knowledge from areas closely related (neuroscience, psychology, mostly); and a familiarity with related disciplines (biology, psychiatry, etc.)</li>
-                        <li>Grow skills in writing, data analysis, experiment administration and protocols, and presentation.</li>
-                        <li>Seek out opportunities for awards (fellowships, travel awards)</li>
-                        <li>Publish 1 leading author paper, and 1 or more co-author papers per year in the lab</li>
-                        <li>Advocate for what they think and what they need to do their jobs</li>
-                        <li>Develop (or maintain) healthy work habits and a good balance.</li>
-                    </ul>
+                        <h4>2.5 PhD Students</h4>
+                        <p>In general PhD students have a fairly loose leash as long as they are making progress on projects. In practice, this likely means there will be crunch times where you're working hard to get things done, and lighter times when you can take it easy.</p>
+                        <p>PhD students are expected to:</p>
+                        <ul>
+                            <li>Develop and manage an independent project.</li>
+                            <li>Know the literature and learn the skills related to their project.</li>
+                            <li>Have a strong grasp of bioengineering; a breadth of knowledge from areas closely related (neuroscience, psychology, mostly); and a familiarity with related disciplines (biology, psychiatry, etc.)</li>
+                            <li>Grow skills in writing, data analysis, experiment administration and protocols, and presentation.</li>
+                            <li>Seek out opportunities for awards (fellowships, travel awards)</li>
+                            <li>Publish 1 leading author paper, and 1 or more co-author papers per year in the lab</li>
+                            <li>Advocate for what they think and what they need to do their jobs</li>
+                            <li>Develop (or maintain) healthy work habits and a good balance.</li>
+                        </ul>
 
-                    <h4>2.6 Undergraduate RAs</h4>
-                    <p>Undergraduate research assistants help with research duties. But especially if this is your first time working in a research lab, you should not just blindly go about your work and do what you're told. Look for ways you can actively contribute to the lab. This includes generating your own ideas but also developing your own skills. You should not have empty time in the lab but rather pick a skill you're interested in learning (consult with your grad mentor or Dr. Zhu if necessary) and spend your free lab time teaching yourself.</p>
-                    <p>Undergraduate research assistants are expected to:</p>
-                    <ul>
-                        <li>Work in the lab 3-hours per credit per week; the general minimum is 9-hours per week (though the number of credits can be less than 3)</li>
-                        <li>Contribute to a project, including:
-                            <ul>
-                                <li>Developing a project (collecting data, coding the study)</li>
-                                <li>Coding data</li>
-                                <li>Analyzing data</li>
-                            </ul>
-                        </li>
-                        <li>Develop their own skills, including:
-                            <ul>
-                                <li>Knowledge of fMRI</li>
-                                <li>Ability to code in Python, R, Matlab.</li>
-                                <li>Knowledge of the literature as pertains to their projects.</li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <h4>2.6 Undergraduate RAs</h4>
+                        <p>Undergraduate research assistants help with research duties. But especially if this is your first time working in a research lab, you should not just blindly go about your work and do what you're told. Look for ways you can actively contribute to the lab. This includes generating your own ideas but also developing your own skills. You should not have empty time in the lab but rather pick a skill you're interested in learning (consult with your grad mentor or Dr. Zhu if necessary) and spend your free lab time teaching yourself.</p>
+                        <p>Undergraduate research assistants are expected to:</p>
+                        <ul>
+                            <li>Work in the lab 3-hours per credit per week; the general minimum is 9-hours per week (though the number of credits can be less than 3)</li>
+                            <li>Contribute to a project, including:
+                                <ul>
+                                    <li>Developing a project (collecting data, coding the study)</li>
+                                    <li>Coding data</li>
+                                    <li>Analyzing data</li>
+                                </ul>
+                            </li>
+                            <li>Develop their own skills, including:
+                                <ul>
+                                    <li>Knowledge of fMRI</li>
+                                    <li>Ability to code in Python, R, Matlab.</li>
+                                    <li>Knowledge of the literature as pertains to their projects.</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    <h3>Chapter 3: Doing Science in the BRAIN Lab</h3>
-                    <p>The BRAIN lab is committed to open science, careful work practices, and multi-disciplinary shenanigans! What does this mean? There are three inter-related areas that are important to our approach.</p>
-                    <h4>3.1 Open science</h4>
-                    <ul>
-                        <li>Data, material, and code from all projects will be hosted publicly and shared Within a reasonable timeframe; obviously, nothing will be shared before we are ready to publish or while we are working through the data. In practice, this means projects will be hosted on one or all of the following sources: <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">OSF</a>, <a href="https://figshare.com/" target="_blank" rel="noopener noreferrer">Figshare</a>, <a href="https://openneuro.org/" target="_blank" rel="noopener noreferrer">OpenNeuro.org</a>, <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Github</a>.</li>
-                        <li>Projects will, whenever possible, be pre-registered. In practice, this means nearly all projects will be pre-registered in some form. Pilot projects may be the exception. See guides on <a href="https://osf.io/prereg/" target="_blank" rel="noopener noreferrer">OSF</a> and <a href="https://aspredicted.org/" target="_blank" rel="noopener noreferrer">Aspredicted.org</a>.</li>
-                        <li>Papers will be made available in pre-print form (e.g., <a href="https://www.biorxiv.org/" target="_blank" rel="noopener noreferrer">biorxiv</a>, <a href="https://psyarxiv.com/" target="_blank" rel="noopener noreferrer">psyarxiv</a>).</li>
-                    </ul>
-                    <h4>3.2 Data management</h4>
-                    <p>Data you collect in the lab will be backed up in two of these locations (in addition to your local computer):</p>
-                    <ul>
-                        <li>Lab Onedrive (folder shared with lab manager and/or Dr. Zhu)</li>
-                        <li>Lab hard drives</li>
-                    </ul>
-                    <ul>
-                        <li>Raw data MUST be backed up and not touched following lab protocols (with Readme.md documentation). Always work on a copy of the raw data when conducting analyses.</li>
-                        <li>De-identified or anonymized raw data may also be hosted online for sharing. For fMRI data, structural scans must be de-identified.</li>
-                    </ul>
-                    <h4>3.3 Careful work</h4>
-                    <p>You will hear me use the term Sanity Check. We should all strive to be a little bit obsessive about our data and analyses. Mistakes absolutely happen, but we should do as much as we can to prevent them and detect them. The following practices have helped me immensely.</p>
-                    <ul>
-                        <li>Develop a habit of documenting everything you do the second time you do it. (Why the second time? If you do it the first time, you may never do it again. If you do it a second time, you will almost certainly need to do it a third - it is now likely worth the time to document it).</li>
-                        <li>Documentations for your work
-                            <ul>
-                                <li>README.md (at root of every project) including:
-                                    <ul>
-                                        <li>Project title and description</li>
-                                        <li>Dataset(s) used</li>
-                                        <li>Main questions/hypotheses</li>
-                                        <li>Team members & roles</li>
-                                        <li>Links to paper, OSF, code, or preprint (if applicable)</li>
-                                    </ul>
-                                </li>
-                                <li>Imaging Data
-                                    <ul>
-                                        <li>Using standard format for imaging data storage following BIDS format</li>
-                                        <li>Document imaging processing pipelines, including versions used for the software.</li>
-                                        <li>Statistical analysis code documentation: Use R or python Jupyter Notebooks to document your code with enough comments to help you replicate your analysis in the future.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <h3 id="chapter3">Chapter 3: Doing Science in the BRAIN Lab</h3>
+                        <p>The BRAIN lab is committed to open science, careful work practices, and multi-disciplinary shenanigans! What does this mean? There are three inter-related areas that are important to our approach.</p>
+                        <h4>3.1 Open science</h4>
+                        <ul>
+                            <li>Data, material, and code from all projects will be hosted publicly and shared Within a reasonable timeframe; obviously, nothing will be shared before we are ready to publish or while we are working through the data. In practice, this means projects will be hosted on one or all of the following sources: <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">OSF</a>, <a href="https://figshare.com/" target="_blank" rel="noopener noreferrer">Figshare</a>, <a href="https://openneuro.org/" target="_blank" rel="noopener noreferrer">OpenNeuro.org</a>, <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Github</a>.</li>
+                            <li>Projects will, whenever possible, be pre-registered. In practice, this means nearly all projects will be pre-registered in some form. Pilot projects may be the exception. See guides on <a href="https://osf.io/prereg/" target="_blank" rel="noopener noreferrer">OSF</a> and <a href="https://aspredicted.org/" target="_blank" rel="noopener noreferrer">Aspredicted.org</a>.</li>
+                            <li>Papers will be made available in pre-print form (e.g., <a href="https://www.biorxiv.org/" target="_blank" rel="noopener noreferrer">biorxiv</a>, <a href="https://psyarxiv.com/" target="_blank" rel="noopener noreferrer">psyarxiv</a>).</li>
+                        </ul>
+                        <h4>3.2 Data management</h4>
+                        <p>Data you collect in the lab will be backed up in two of these locations (in addition to your local computer):</p>
+                        <ul>
+                            <li>Lab Onedrive (folder shared with lab manager and/or Dr. Zhu)</li>
+                            <li>Lab hard drives</li>
+                        </ul>
+                        <ul>
+                            <li>Raw data MUST be backed up and not touched following lab protocols (with Readme.md documentation). Always work on a copy of the raw data when conducting analyses.</li>
+                            <li>De-identified or anonymized raw data may also be hosted online for sharing. For fMRI data, structural scans must be de-identified.</li>
+                        </ul>
+                        <h4>3.3 Careful work</h4>
+                        <p>You will hear me use the term Sanity Check. We should all strive to be a little bit obsessive about our data and analyses. Mistakes absolutely happen, but we should do as much as we can to prevent them and detect them. The following practices have helped me immensely.</p>
+                        <ul>
+                            <li>Develop a habit of documenting everything you do the second time you do it. (Why the second time? If you do it the first time, you may never do it again. If you do it a second time, you will almost certainly need to do it a third - it is now likely worth the time to document it).</li>
+                            <li>Documentations for your work
+                                <ul>
+                                    <li>README.md (at root of every project) including:
+                                        <ul>
+                                            <li>Project title and description</li>
+                                            <li>Dataset(s) used</li>
+                                            <li>Main questions/hypotheses</li>
+                                            <li>Team members & roles</li>
+                                            <li>Links to paper, OSF, code, or preprint (if applicable)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Imaging Data
+                                        <ul>
+                                            <li>Using standard format for imaging data storage following BIDS format</li>
+                                            <li>Document imaging processing pipelines, including versions used for the software.</li>
+                                            <li>Statistical analysis code documentation: Use R or python Jupyter Notebooks to document your code with enough comments to help you replicate your analysis in the future.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    <h3>Chapter 4: Authorship</h3>
-                    <p>Our goal is to create clear, fair, and transparent criteria for authorship and acknowledgments in all scholarly outputs produced within our lab, ensuring alignment with ethical standards and fostering collaborative integrity.</p>
-                    <p>The authorship should be discussed early in the project, ideally at the study design or data collection phase, and revisited as work progresses.</p>
-                    <h4>4.1 General criteria for authorship</h4>
-                    <p>We adhere to the authorship criteria established by the <a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener noreferrer">International Committee of Medical Journal Editors (ICMJE)</a>. An individual qualifies for authorship if they meet all four of the following conditions:</p>
-                    <ol>
-                        <li><strong>Substantial contributions</strong> to the conception or design of the work; or the acquisition, analysis, or interpretation of data for the work.</li>
-                        <li><strong>Drafting the work or reviewing it critically</strong> for important intellectual content.</li>
-                        <li><strong>Final approval</strong> of the version to be published.</li>
-                        <li><strong>Agreement to be accountable</strong> for all aspects of the work, ensuring that questions related to the accuracy or integrity of any part of the work are appropriately investigated and resolved.</li>
-                    </ol>
-                    <p>Individuals who do not meet all authorship criteria, but provided support (e.g., technical assistance, data collection only, funding acquisition without intellectual contribution), should be acknowledged in a dedicated section.</p>
-                    <p>Ghost authorship (uncredited contributors) and honorary authorship (listed authors who didn't contribute) are not permitted.</p>
-                    <h4>4.2 Authorship Order</h4>
-                    <p>In general, the authorship should reflect relative contribution of the research project. The revision of authorship should be approved by all authors before submission or resubmission.</p>
-                    <ul>
-                        <li><strong>First Author:</strong> Typically, the person who contributes the most to the research project, including initiate the project/write the research project proposal, execution, data analysis and writing. Usually leads the writing process.</li>
-                        <li><strong>Co-first Author:</strong> Co-first authorship may be assigned when two or more individuals have made equally significant contributions to the work, including study design, and/or hypothesis development; data collection and analysis; and manuscript writing and revisions. The manuscript must include a clear footnote or asterisk indicating equal contribution (e.g., "These authors contributed equally to this work.").</li>
-                        <li><strong>Middle Author:</strong> Individuals who have made substantial contributions to the project, but not to the extent required for first or senior (last) authorship. Middle authors must meet the ICMJE authorship criteria. Their contributions typically include one or more of the following:
-                            <ul>
-                                <li>Major contributions to data collection or coordination of data sources (e.g., imaging, behavioral, or clinical data)</li>
-                                <li>Substantive input in data preprocessing or statistical analysis without leading the analytical design</li>
-                                <li>Involvement in the design or execution of a key methodological component of the study</li>
-                                <li>Provided critical domain expertise or resources that shaped the study (e.g., dataset, task design, clinical characterization)</li>
-                                <li>Contributed to interpretation of results and provided substantive feedback on manuscript drafts</li>
-                                <li>Participated in writing specific sections or critically revising the manuscript for intellectual content</li>
-                            </ul>
-                        </li>
-                        <li><strong>Senior Author (Last Author):</strong> Usually the PI or mentor who supervised the research and secured funding or led project strategy.</li>
-                        <li><strong>Corresponding Author:</strong> Responsible for managing communication with the journal during the submission and publication process.</li>
-                    </ul>
-                    <p><strong>Note:</strong> Performing data analysis alone does not guarantee first authorship. To qualify, one must also contribute meaningfully to the development of the scientific narrative and participate in manuscript writing.</p>
-                    <p>Manuscripts using lab datasets, tools, resources or funding should always involve the PI as a co-author unless prior arrangements are made.</p>
-                    <p>Trainees and Early Career Researchers are encouraged to take first-author roles when they have led substantial parts of the work. Senior lab members should support writing and submission mentorship as part of career development.</p>
+                        <h3 id="chapter4">Chapter 4: Authorship</h3>
+                        <p>Our goal is to create clear, fair, and transparent criteria for authorship and acknowledgments in all scholarly outputs produced within our lab, ensuring alignment with ethical standards and fostering collaborative integrity.</p>
+                        <p>The authorship should be discussed early in the project, ideally at the study design or data collection phase, and revisited as work progresses.</p>
+                        <h4>4.1 General criteria for authorship</h4>
+                        <p>We adhere to the authorship criteria established by the <a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener noreferrer">International Committee of Medical Journal Editors (ICMJE)</a>. An individual qualifies for authorship if they meet all four of the following conditions:</p>
+                        <ol>
+                            <li><strong>Substantial contributions</strong> to the conception or design of the work; or the acquisition, analysis, or interpretation of data for the work.</li>
+                            <li><strong>Drafting the work or reviewing it critically</strong> for important intellectual content.</li>
+                            <li><strong>Final approval</strong> of the version to be published.</li>
+                            <li><strong>Agreement to be accountable</strong> for all aspects of the work, ensuring that questions related to the accuracy or integrity of any part of the work are appropriately investigated and resolved.</li>
+                        </ol>
+                        <p>Individuals who do not meet all authorship criteria, but provided support (e.g., technical assistance, data collection only, funding acquisition without intellectual contribution), should be acknowledged in a dedicated section.</p>
+                        <p>Ghost authorship (uncredited contributors) and honorary authorship (listed authors who didn't contribute) are not permitted.</p>
+                        <h4>4.2 Authorship Order</h4>
+                        <p>In general, the authorship should reflect relative contribution of the research project. The revision of authorship should be approved by all authors before submission or resubmission.</p>
+                        <ul>
+                            <li><strong>First Author:</strong> Typically, the person who contributes the most to the research project, including initiate the project/write the research project proposal, execution, data analysis and writing. Usually leads the writing process.</li>
+                            <li><strong>Co-first Author:</strong> Co-first authorship may be assigned when two or more individuals have made equally significant contributions to the work, including study design, and/or hypothesis development; data collection and analysis; and manuscript writing and revisions. The manuscript must include a clear footnote or asterisk indicating equal contribution (e.g., "These authors contributed equally to this work.").</li>
+                            <li><strong>Middle Author:</strong> Individuals who have made substantial contributions to the project, but not to the extent required for first or senior (last) authorship. Middle authors must meet the ICMJE authorship criteria. Their contributions typically include one or more of the following:
+                                <ul>
+                                    <li>Major contributions to data collection or coordination of data sources (e.g., imaging, behavioral, or clinical data)</li>
+                                    <li>Substantive input in data preprocessing or statistical analysis without leading the analytical design</li>
+                                    <li>Involvement in the design or execution of a key methodological component of the study</li>
+                                    <li>Provided critical domain expertise or resources that shaped the study (e.g., dataset, task design, clinical characterization)</li>
+                                    <li>Contributed to interpretation of results and provided substantive feedback on manuscript drafts</li>
+                                    <li>Participated in writing specific sections or critically revising the manuscript for intellectual content</li>
+                                </ul>
+                            </li>
+                            <li><strong>Senior Author (Last Author):</strong> Usually the PI or mentor who supervised the research and secured funding or led project strategy.</li>
+                            <li><strong>Corresponding Author:</strong> Responsible for managing communication with the journal during the submission and publication process.</li>
+                        </ul>
+                        <p><strong>Note:</strong> Performing data analysis alone does not guarantee first authorship. To qualify, one must also contribute meaningfully to the development of the scientific narrative and participate in manuscript writing.</p>
+                        <p>Manuscripts using lab datasets, tools, resources or funding should always involve the PI as a co-author unless prior arrangements are made.</p>
+                        <p>Trainees and Early Career Researchers are encouraged to take first-author roles when they have led substantial parts of the work. Senior lab members should support writing and submission mentorship as part of career development.</p>
 
-                    <h3>Chapter 5: Communication</h3>
-                    <p>Science, especially as practiced in the BRAIN Lab, is a collaborative endeavor, which means good communication is key. Here are the main ways the lab communicates. We will have the following:</p>
-                    <h4>5.1 Lab meeting</h4>
-                    <p>Lab meetings are held weekly during the semester and intermittently throughout the summer. If you can't attend in-person, you can find the zoom link on the invite. This document also provides an outline for that week's meeting. Lab meetings are approximately two hours long. The first ~20-30 minutes consist of lab updates in which each lab member briefly (5 minutes or so) explains what constituted the bulk of their work that week; what progress was made, what hurdles were hit; and any general info they encountered relevant to the lab. The remaining 1-1.5 hours is provided for one lab member to give a presentation. The presentation can range widely (almost all formats are acceptable). Here are a few examples:</p>
-                    <ul>
-                        <li>A journal club / discussion of an article</li>
-                        <li>A project proposal / plan</li>
-                        <li>A discussion about a general issue in science (e.g., preregistration, p-hacking, etc.)</li>
-                        <li>Technique or tutorial (relevant to almost anything in the lab - e.g., an MVPA crash course or how to organize folders for a project)</li>
-                        <li>A data talk (e.g., where you have data but need help thinking through what it means, what to do next, or what you might not have thought of)</li>
-                        <li>A polished (practice) presentation or job talk</li>
-                    </ul>
-                    <h4>5.2 In-person meetings</h4>
-                    <p><strong>Regular individual meetings:</strong> In-person meetings (in person or via Zoom) are a great way to work directly and solve a particular problem or make plans of action. Lab members have regularly scheduled weekly meetings with me.</p>
-                    <p><strong>Additional meetings:</strong> Anyone should always feel free to schedule additional meetings with me or other team members. Before asking about a meeting, however, ask yourself the following things:</p>
-                    <ul>
-                        <li>Could this be solved via google search/AI (e.g. Chatgpt) search? If yes, please solve yourself. If no…</li>
-                        <li>Could this be solved via email? If yes, send email. If no…</li>
-                        <li>What is the purpose of the meeting? (In other words, what is the agenda?) Make sure the purpose is in the email to schedule it.</li>
-                        <li>What are the necessary inputs to the meeting? (Do we have all information we need to facilitate the meeting; if not, what are we waiting for? Are all necessary people involved?)</li>
-                        <li>What are the expected outputs? Always ask yourself at the end of the meeting whether you know what the action items are (who will do what).</li>
-                    </ul>
-                    <h4>5.3 To-do lists</h4>
-                    <p>Our lab to-do lists. I recommend that everyone use Asana or excel spreadsheet as their own to-do list manager, but I would strongly encourage using the shared to-do list feature for projects we're working on. Note that cards can be assigned due dates and assigned to specific people, who can indicate when they have finished tasks.</p>
-                    <h4>5.4 Email</h4>
-                    <p>Official communication, notifications through UTA emails.</p>
+                        <h3 id="chapter5">Chapter 5: Communication</h3>
+                        <p>Science, especially as practiced in the BRAIN Lab, is a collaborative endeavor, which means good communication is key. Here are the main ways the lab communicates. We will have the following:</p>
+                        <h4>5.1 Lab meeting</h4>
+                        <p>Lab meetings are held weekly during the semester and intermittently throughout the summer. If you can't attend in-person, you can find the zoom link on the invite. This document also provides an outline for that week's meeting. Lab meetings are approximately two hours long. The first ~20-30 minutes consist of lab updates in which each lab member briefly (5 minutes or so) explains what constituted the bulk of their work that week; what progress was made, what hurdles were hit; and any general info they encountered relevant to the lab. The remaining 1-1.5 hours is provided for one lab member to give a presentation. The presentation can range widely (almost all formats are acceptable). Here are a few examples:</p>
+                        <ul>
+                            <li>A journal club / discussion of an article</li>
+                            <li>A project proposal / plan</li>
+                            <li>A discussion about a general issue in science (e.g., preregistration, p-hacking, etc.)</li>
+                            <li>Technique or tutorial (relevant to almost anything in the lab - e.g., an MVPA crash course or how to organize folders for a project)</li>
+                            <li>A data talk (e.g., where you have data but need help thinking through what it means, what to do next, or what you might not have thought of)</li>
+                            <li>A polished (practice) presentation or job talk</li>
+                        </ul>
+                        <h4>5.2 In-person meetings</h4>
+                        <p><strong>Regular individual meetings:</strong> In-person meetings (in person or via Zoom) are a great way to work directly and solve a particular problem or make plans of action. Lab members have regularly scheduled weekly meetings with me.</p>
+                        <p><strong>Additional meetings:</strong> Anyone should always feel free to schedule additional meetings with me or other team members. Before asking about a meeting, however, ask yourself the following things:</p>
+                        <ul>
+                            <li>Could this be solved via google search/AI (e.g. Chatgpt) search? If yes, please solve yourself. If no…</li>
+                            <li>Could this be solved via email? If yes, send email. If no…</li>
+                            <li>What is the purpose of the meeting? (In other words, what is the agenda?) Make sure the purpose is in the email to schedule it.</li>
+                            <li>What are the necessary inputs to the meeting? (Do we have all information we need to facilitate the meeting; if not, what are we waiting for? Are all necessary people involved?)</li>
+                            <li>What are the expected outputs? Always ask yourself at the end of the meeting whether you know what the action items are (who will do what).</li>
+                        </ul>
+                        <h4>5.3 To-do lists</h4>
+                        <p>Our lab to-do lists. I recommend that everyone use Asana or excel spreadsheet as their own to-do list manager, but I would strongly encourage using the shared to-do list feature for projects we're working on. Note that cards can be assigned due dates and assigned to specific people, who can indicate when they have finished tasks.</p>
+                        <h4>5.4 Email</h4>
+                        <p>Official communication, notifications through UTA emails.</p>
 
-                    <h3>Chapter 6: Working in the lab</h3>
-                    <p>In the BRAIN lab, we are committed to conducting rigorous, reproducible, and impactful research. Every member of the lab contributes to a shared mission: to advance our understanding of brain health and psychiatric disorders using neuroimaging, machine learning, and data science. This means documenting our work thoroughly, collaborating respectfully, and approaching each task with care and intention.</p>
-                    <p>We also prioritize a supportive, inclusive, and professional work environment. Critique is welcomed when it is constructive and focused on improving the science—not personal. Our lab is a space for curiosity, innovation, and mutual respect. We treat each other as colleagues and collaborators.</p>
-                    <p>Lastly, working in this lab is a professional responsibility, not a side project or a hobby. Whether you are a PhD student, postdoc, or research assistant, you are a valued team member contributing to real-world scientific products—datasets, methods, software, publications, and public health knowledge. You are expected to approach your time here as an opportunity to grow as a scientist and a collaborator.</p>
-                    <p>You have the following rights working in the lab.</p>
-                    <h4>6.1 Rights</h4>
-                    <h5>A Safe, Inclusive Environment</h5>
-                    <p>You have the right to work in an environment free from bias, discrimination, and harassment. We are committed to fostering diversity, inclusion, and equity. We celebrate different backgrounds and experiences and expect every member to contribute to a respectful and welcoming culture.</p>
-                    <h5>The Right to Make Mistakes</h5>
-                    <p>Research is hard. We're working at the frontiers of science—mistakes are inevitable. What matters is how you respond: learn from it, communicate openly, and work with the team to correct it. You will never be judged for making an honest error.</p>
-                    <h5>The Right to Think Boldly</h5>
-                    <p>You have the right to ask questions, propose unconventional ideas, and challenge assumptions—including those of senior lab members and the PI. You are encouraged to explore, test, and revise ideas with scientific integrity.</p>
-                    <h5>The Right to Critique (Respectfully)</h5>
-                    <p>You are expected to think critically, including about your own work and that of your colleagues. Critiques should be specific, constructive, and never personal. Challenge ideas, not people.</p>
-                    <h5>The Right to Work-Life Balance</h5>
-                    <p>We expect high-quality work—but not burnout. You have the right to protect your time and mental health. Take breaks, set boundaries, and speak up if your workload becomes unsustainable.</p>
-                    <h4>6.2 Responsibilities</h4>
-                    <ul>
-                        <li>All lab members will prioritize a healthy and supportive lab culture. The BRAIN lab is deeply committed to maintaining a harassment-free and inclusive culture. All lab members are expected to treat each other with respect, professionalism, and general courtesy. This also means you have a responsibility to ensuring you maintain a healthy work-life balance (whatever this means for you). We strive for diversity, anti-racism, and inclusivity.</li>
-                        <li>This is a professional work environment. Our lab is a professional research environment. This means that how we conduct ourselves—with colleagues, collaborators, and research participants—reflects not just on you as an individual, but on our lab, our department, and our broader academic community. Upholding professionalism fosters trust, efficiency, and respect.</li>
-                        <li>You are a team member first. As a lab, we can only thrive by relying and counting on each other. Treat everyone in the lab (and anyone related to the lab, including participants, collaborators, mentors) with respect and care. Respect their time, their preferred hours, and their needs. Help them when they ask (within reason) and help build a culture of respect and honesty. Work with care. Measure twice, cut once. Document your workflows. Save and backup all raw data and code. It is best practice to write analysis code on simulated or pilot data as proof of principle and good sanity checking. In the experiment phase, make sure raw data are being regularly backed up. In the analysis phase, make sure difficult-to-reproduce products are also backed up, and that all analyses are reproducible and documented. In the submission phase, all materials should be uploaded to OSF, OpenNeuro, or another online repository in preparation for submission.</li>
-                        <li>Our goal is research products. Posters, presentations, and publications are the traditional academic products, and you will be expected to produce or contribute to these as a member of the lab. But we also value contributions of data sets (documented and described), software packages (and analysis pipelines), and 'reproducible sandboxes' (Jupyter Notebooks). These research products are rarely peer-reviewed but provide invaluable tools for the broader research world and their creation is not taken lightly.</li>
-                    </ul>
-                    <p>Working in this lab is not only about advancing science—it's also about building habits of integrity, rigor, and collaboration. Your time here is an opportunity to develop technical skills, explore bold ideas, contribute to meaningful science, and grow as a professional.</p>
-                    <p>We hope you'll bring your curiosity, your questions, your creativity, and your care to this work. We're excited to build science—and a better scientific culture—with you.</p>
-                    
-                    <hr style="margin-top: 2rem; margin-bottom: 1rem;">
-                    <h3>Contact</h3>
-                     <p>If you have questions or need assistance, please contact Dr. Xi Zhu at <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a> or visit the <a href="contact.html">Contact page</a>.</p>
+                        <h3 id="chapter6">Chapter 6: Working in the lab</h3>
+                        <p>In the BRAIN lab, we are committed to conducting rigorous, reproducible, and impactful research. Every member of the lab contributes to a shared mission: to advance our understanding of brain health and psychiatric disorders using neuroimaging, machine learning, and data science. This means documenting our work thoroughly, collaborating respectfully, and approaching each task with care and intention.</p>
+                        <p>We also prioritize a supportive, inclusive, and professional work environment. Critique is welcomed when it is constructive and focused on improving the science—not personal. Our lab is a space for curiosity, innovation, and mutual respect. We treat each other as colleagues and collaborators.</p>
+                        <p>Lastly, working in this lab is a professional responsibility, not a side project or a hobby. Whether you are a PhD student, postdoc, or research assistant, you are a valued team member contributing to real-world scientific products—datasets, methods, software, publications, and public health knowledge. You are expected to approach your time here as an opportunity to grow as a scientist and a collaborator.</p>
+                        <p>You have the following rights working in the lab.</p>
+                        <h4>6.1 Rights</h4>
+                        <h5>A Safe, Inclusive Environment</h5>
+                        <p>You have the right to work in an environment free from bias, discrimination, and harassment. We are committed to fostering diversity, inclusion, and equity. We celebrate different backgrounds and experiences and expect every member to contribute to a respectful and welcoming culture.</p>
+                        <h5>The Right to Make Mistakes</h5>
+                        <p>Research is hard. We're working at the frontiers of science—mistakes are inevitable. What matters is how you respond: learn from it, communicate openly, and work with the team to correct it. You will never be judged for making an honest error.</p>
+                        <h5>The Right to Think Boldly</h5>
+                        <p>You have the right to ask questions, propose unconventional ideas, and challenge assumptions—including those of senior lab members and the PI. You are encouraged to explore, test, and revise ideas with scientific integrity.</p>
+                        <h5>The Right to Critique (Respectfully)</h5>
+                        <p>You are expected to think critically, including about your own work and that of your colleagues. Critiques should be specific, constructive, and never personal. Challenge ideas, not people.</p>
+                        <h5>The Right to Work-Life Balance</h5>
+                        <p>We expect high-quality work—but not burnout. You have the right to protect your time and mental health. Take breaks, set boundaries, and speak up if your workload becomes unsustainable.</p>
+                        <h4>6.2 Responsibilities</h4>
+                        <ul>
+                            <li>All lab members will prioritize a healthy and supportive lab culture. The BRAIN lab is deeply committed to maintaining a harassment-free and inclusive culture. All lab members are expected to treat each other with respect, professionalism, and general courtesy. This also means you have a responsibility to ensuring you maintain a healthy work-life balance (whatever this means for you). We strive for diversity, anti-racism, and inclusivity.</li>
+                            <li>This is a professional work environment. Our lab is a professional research environment. This means that how we conduct ourselves—with colleagues, collaborators, and research participants—reflects not just on you as an individual, but on our lab, our department, and our broader academic community. Upholding professionalism fosters trust, efficiency, and respect.</li>
+                            <li>You are a team member first. As a lab, we can only thrive by relying and counting on each other. Treat everyone in the lab (and anyone related to the lab, including participants, collaborators, mentors) with respect and care. Respect their time, their preferred hours, and their needs. Help them when they ask (within reason) and help build a culture of respect and honesty. Work with care. Measure twice, cut once. Document your workflows. Save and backup all raw data and code. It is best practice to write analysis code on simulated or pilot data as proof of principle and good sanity checking. In the experiment phase, make sure raw data are being regularly backed up. In the analysis phase, make sure difficult-to-reproduce products are also backed up, and that all analyses are reproducible and documented. In the submission phase, all materials should be uploaded to OSF, OpenNeuro, or another online repository in preparation for submission.</li>
+                            <li>Our goal is research products. Posters, presentations, and publications are the traditional academic products, and you will be expected to produce or contribute to these as a member of the lab. But we also value contributions of data sets (documented and described), software packages (and analysis pipelines), and 'reproducible sandboxes' (Jupyter Notebooks). These research products are rarely peer-reviewed but provide invaluable tools for the broader research world and their creation is not taken lightly.</li>
+                        </ul>
+                        <p>Working in this lab is not only about advancing science—it's also about building habits of integrity, rigor, and collaboration. Your time here is an opportunity to develop technical skills, explore bold ideas, contribute to meaningful science, and grow as a professional.</p>
+                        <p>We hope you'll bring your curiosity, your questions, your creativity, and your care to this work. We're excited to build science—and a better scientific culture—with you.</p>
+                        
+                        <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+                        <h3>Contact</h3>
+                         <p>If you have questions or need assistance, please contact Dr. Xi Zhu at <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a> or visit the <a href="contact.html">Contact page</a>.</p>
+                    </div>
                 </div>
             </div>
         </section>
