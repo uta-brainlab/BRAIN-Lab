@@ -174,6 +174,15 @@
 	}
 	}
 
+        .news-text{
+           flex: 1;
+           min-width: 0; /* prevents weird wrapping/overflow */
+         }
+
+        .news-title{
+          margin: 0 0 0.4rem 0;
+        }
+
 
         /* Footer */
         footer { background-color: #343a40; color: white; padding: 3rem 0 1rem 0; margin-top: 3rem;}
@@ -350,26 +359,31 @@
         </section>
 
         <section class="news">
-            <div class="container">
-                <h2>News</h2>
-                <div class="news-content">
-                    <div class="news-item">
-                        <div class="news-bullet">
-                        <img class="news-thumb" src="images/zhu-brain-main.jpg" alt="News thumbnail">
-                        <div class="news-text">
-                        <h3 class="news-title">
-                            <a href="https://www.uta.edu/news/news-releases/2025/10/01/uta-research-seeks-new-answers-to-brain-disorders" target="_blank" rel="noopener noreferrer">
-                                        Dr Xi Zhu, PhD received $4.5 million USD in grant funding from the NIH!
-                        </a>
-                        </h3>
-                     <p class="news-summary">
-                       Professor Xi Zhu, PhD has received more than $4.5 million USD in grant funding from the National Institutes of Health (NIH) for developing cutting-edge research study brain disorders, such as, Post-Traumatic Stress Disorder (PTSD), Major Depressive Disorder (MDD) and anxiety!
-                  </p>
-                  </div>
-                  </div>
-                    </div>
+          <div class="container">
+            <h2>News</h2>
+
+            <div class="news-content">
+            <div class="news-item">
+             <div class="news-bullet">
+                <img class="news-thumb" src="images/zhu-brain-main.jpg" alt="News thumbnail">
+
+                 <div class="news-text">
+                  <h3 class="news-title">
+                    <a href="https://www.uta.edu/news/news-releases/2025/10/01/uta-research-seeks-new-answers-to-brain-disorders" target="_blank" rel="noopener noreferrer">
+                     Dr Xi Zhu, PhD received $4.5 million USD in grant funding from the NIH!
+                    </a>
+                  </h3>
+
+                  <p class="news-summary">
+                   Professor Xi Zhu, PhD has received more than $4.5 million USD in grant funding from the National Institutes of Health (NIH)
+                   for developing cutting-edge research to study brain disorders, such as Post-Traumatic Stress Disorder (PTSD),
+                   Major Depressive Disorder (MDD), and anxiety.
+                 </p>
                 </div>
+               </div>
             </div>
+          </div>
+         </div>
         </section>
 
 
