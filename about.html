@@ -174,13 +174,15 @@
 	}
 	}
 
-        .news-text{
-           flex: 1;
-           min-width: 0; /* prevents weird wrapping/overflow */
-         }
+        .news-content{
+          display: flex;
+          flex-direction: column;   /* stack news items vertically */
+          gap: 1.5rem;
+        }
 
-        .news-title{
-          margin: 0 0 0.4rem 0;
+        .news-item{
+          max-width: 100%;          /* remove narrow cap */
+          width: 100%;
         }
 
 
