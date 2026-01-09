@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada (Yumeng) Qi - BRAIN Lab @ UTA</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .member-profile {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .member-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .member-info {
+            flex: 1;
+        }
+        .member-bio {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .member-bio p {
+            margin-bottom: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .publications {
+            margin-top: 2rem;
+        }
+        .publications h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .publication-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        /* Header and Navigation Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        nav .menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav .menu li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav .menu li a:hover,
+        nav .menu li a.active {
+            color: var(--primary-color);
+        }
+        nav .menu li a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">BRAIN Lab @ UTA</a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../team.html">Team</a></li>
+                    <li><a href="../publications.html">Publications</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../grants.html">Grants</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="member-profile">
+            <div class="member-header">
+                <div class="member-photo">
+                    <img src="../team members/Ada.png" alt="Ada Qi">
+                </div>
+                <div class="member-info">
+                    <h1>Ada (Yumeng) Qi</h1>
+                    <p class="member-title">Research Assistant</p>
+                    <div class="member-links">
+                        <a href="mailto:yq2378@caa.columbia.edu"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://all-about-ada.notion.site/All-About-Ada-9a5f388af64e48cb943f23bc85eea9a8" target="_blank"><i class="fas fa-external-link-alt"></i> Notion Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-bio">
+                <p>Ada is a quantitative researcher with formal training in statistics and biostatistics, and hands-on experience developing <b>ML</b>, <b>DL</b>, and <b>AI-based</b> pipelines to address neuropsychiatric and brain-related research questions. </p> 
+                <p>Her research interests center on designing and applying machine learning and deep learning models for neuropsychiatric problems, including techniques such as: </p> 
+
+                   <ul>
+                   <li>Neural network architectures for temporal and imaging data</li>
+                   <li>Evidence-based statistical modeling</li>
+                   <li>Reproducible and scalable data workflows</li>
+                   </ul>
+
+                <p>She describes herself as a lifelong learner who finds joy in exploring new ideas, tools, and challenges, and is motivated by projects that connect data science with real human impact.</p>
+            </div>
+
+
+            <a href="../team.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Team</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BRAIN Lab @ UTA</h3>
+                    <p>Biomedical Research in AI and Neuroimaging Laboratory<br>University of Texas at Arlington</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>
+                        SEIR 225<br>
+                        655 W Mitchell St<br>
+                        Arlington, TX 76010<br>
+                        Phone: <a href="tel:817-272-2965">817-272-2965</a><br>
+                        Email: <a href="mailto:xi.zhu@uta.edu">xi.zhu@uta.edu</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 BRAIN Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html> 
