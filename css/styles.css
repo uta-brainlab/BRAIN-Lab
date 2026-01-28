@@ -768,7 +768,7 @@ footer {
 .join-us-section {
     background-color: var(--light-bg);
     border-radius: 8px;
-    padding: 3rem;
+    padding: 3rem 2rem !important;
     margin-top: 4rem;
     text-align: center;
 }
@@ -1307,3 +1307,47 @@ footer {
 .resource-link:hover {
     background: #34495e;
 } 
+
+.member-links-grid {
+    display :grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 1rem;
+    padding-left:1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.member-links-grid a{
+    display: inline-flex;
+    align-items: center;
+    gap:0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 0.02rem;
+    transition: var(--transition);
+}
+
+.member-links-grid a i {
+    color: var(--primary-color);
+    font-size:1rem;
+    min-width:1.2rem;
+}
+
+.member-links-grid a:hover{
+    color:var(--primary-color);
+    background-color: rgba(0,100,177,0.05),
+     
+}
+
+.member-links-grid a.read-more{
+    color: #3498db;
+}
+
+
+@media (max-width: 480px){
+    .member-links-grid{
+        grid-template-columns: 1fr;
+
+    }
+}
+
